@@ -1,39 +1,74 @@
-/* Hero wrapper */
+/* Home.css */
+
+/* 1. Hero wrapper: full viewport, relative for absolute children */
 .hero {
   position: relative;
-  overflow: hidden;
   width: 100%;
-  /* adjust height as needed: */
-  height: 100%;
+  height: 100vh;       /* fill the screen */
+  overflow: hidden;     /* clip overflow */
 }
 
-/* The base image */
+/* 2. Base image: covers the entire hero */
 .hero__img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
 }
 
-/* Gradient overlay: left half solid black → fade → transparent */
+/* 3. Softer gradient: heavy shadow on left, gentle fade by 60% */
 .hero::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;  /* shorthand for top:0; right:0; bottom:0; left:0; */
   background: linear-gradient(
     to right,
-    rgba(0,0,0,1)   0%,
-    rgba(0,0,0,1)  40%,
-    rgba(0,0,0,0) 100%
+    rgb(0, 0, 0)   0%,    /* nearly black on the far left */
+    rgb(0, 0, 0)  40%,    /* still dark here */
+    rgba(0,0,0,0.3)  80%,    /* starting to fade */
+    rgba(0,0,0,0)   100%     /* fully transparent on the right */
   );
   pointer-events: none;
+  z-index: 2;
 }
 
-/* Optional: center your content */
+/* 4. RotatingText container: above the gradient */
+.hero__rotator {
+  position: absolute;
+  top: 30%;             /* tweak vertical position */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* 5. RotatingText styling overrides */
+/* assuming your mainClassName="rotating-text" */
+.rotating-text {
+  display: inline-block;
+  background: rgba(255,255,255,0.85);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: #111;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+/* 6. Your main hero content (e.g., the <h1>) */
 .hero__content {
   position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
   color: #fff;
   text-align: center;
+  z-index: 3;
+}
+
+/* 7. Make the <h1> pop */
+.hero__content h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
