@@ -1,14 +1,21 @@
-/* Base reset for nav */
+/* Navbar.css */
+
+/* 0. Import Google Font (if not already globally imported) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* 1. Glassmorphic navbar */
 .nav {
-  position: fixed;         /* Fix to top */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  font-family: sans-serif;
-  z-index: 1000;           /* Above all content */
-  transition: transform 0.3s ease;  /* Slide transition */
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: 'Roboto', sans-serif;
+  z-index: 1000;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 /* Hidden state: slide up out of view */
@@ -16,7 +23,7 @@
   transform: translateY(-100%);
 }
 
-/* Inner container */
+/* 2. Inner container */
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -26,7 +33,7 @@
   justify-content: space-between;
 }
 
-/* Logo */
+/* 3. Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -38,9 +45,9 @@
   margin-right: 0.5rem;
 }
 
-/* Toggle button (mobile) */
+/* 4. Toggle button (mobile) */
 .nav-toggle {
-  display: none;           /* hidden on desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 24px;
@@ -48,15 +55,13 @@
   background: none;
   border: none;
   cursor: pointer;
+  color: #333;
 }
-.hamburger {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #333;
+.nav-toggle i {
+  font-size: 1.25rem;
 }
 
-/* Menu items (desktop) */
+/* 5. Desktop menu items */
 .nav-menu {
   display: flex;
   gap: 1rem;
@@ -65,45 +70,43 @@
   text-decoration: none;
   color: #333;
   padding: 0.5rem;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 .nav-item:hover {
-  background: #f0f0f0;
+  background: rgba(255,255,255,0.6);
   border-radius: 4px;
 }
 .nav-item.active {
-  color: #007bff;
-  font-weight: bold;
+  color: var(--theme-color, #5227ff);
+  font-weight: 600;
 }
 
-/* Responsive: mobile view */
+/* 6. Responsive: mobile view */
 @media (max-width: 768px) {
   .nav-toggle {
-    display: flex;         /* show toggle */
+    display: flex;
   }
-
   .nav-menu {
-    position: absolute;    /* position under nav */
+    position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: #fff;
+    background: rgba(255,255,255,0.9);
     flex-direction: column;
     align-items: center;
-    max-height: 0;         /* hidden by default */
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
   }
   .nav-menu.open {
-    max-height: 300px;     /* expand to show items */
+    max-height: 300px;
   }
-
   .nav-item {
     width: 100%;
     text-align: center;
     padding: 1rem 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid rgba(0,0,0,0.1);
   }
   .nav-item:first-child {
     border-top: none;

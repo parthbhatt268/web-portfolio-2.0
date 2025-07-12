@@ -1,14 +1,23 @@
 /* Home.css */
 
-/* 1. Hero wrapper: full viewport, relative for absolute children */
+/* 0. Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* 1. Theme color variable */
+:root {
+  --theme-color: #5227ff;
+}
+
+/* 2. Hero wrapper — full viewport */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;       /* fill the screen */
-  overflow: hidden;     /* clip overflow */
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* 2. Base image: covers the entire hero */
+/* 3. Base image layer */
 .hero__img {
   display: block;
   width: 100%;
@@ -17,58 +26,72 @@
   z-index: 1;
 }
 
-/* 3. Softer gradient: heavy shadow on left, gentle fade by 60% */
+/* 4. Gradient overlay */
 .hero::after {
   content: "";
   position: absolute;
-  inset: 0;  /* shorthand for top:0; right:0; bottom:0; left:0; */
+  inset: 0;
   background: linear-gradient(
     to right,
-    rgb(0, 0, 0)   0%,    /* nearly black on the far left */
-    rgb(0, 0, 0)  40%,    /* still dark here */
-    rgba(0,0,0,0.3)  80%,    /* starting to fade */
-    rgba(0,0,0,0)   100%     /* fully transparent on the right */
+    rgba(0, 0, 0, 0.89)   0%,
+    rgba(0, 0, 0, 0.815)  45%,
+    rgba(0,0,0,0.3)  80%,
+    rgba(0,0,0,0)  100%
   );
   pointer-events: none;
   z-index: 2;
 }
 
-/* 4. RotatingText container: above the gradient */
-.hero__rotator {
-  position: absolute;
-  top: 30%;             /* tweak vertical position */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-}
-
-/* 5. RotatingText styling overrides */
-/* assuming your mainClassName="rotating-text" */
-.rotating-text {
-  display: inline-block;
-  background: rgba(255,255,255,0.85);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  color: #111;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-  overflow: hidden;
-}
-
-/* 6. Your main hero content (e.g., the <h1>) */
+/* 5. Left-aligned intro content */
 .hero__content {
   position: absolute;
-  bottom: 15%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
   color: #fff;
-  text-align: center;
+  text-align: left;
   z-index: 3;
+  max-width: 600px;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* 7. Make the <h1> pop */
+/* 6. Main title */
 .hero__content h1 {
-  margin: 0;
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 700;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+/* 7. Subtitle paragraph */
+.hero__subtitle {
+  margin: 0;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  line-height: 1.3;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* 8. Inline rotating-text overrides with glass effect */
+.rotating-text-inline {
+  display: inline-block;
+  color: #fff;
+  /* Frosted-glass overlay */
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  vertical-align: middle;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* 9. Split-level container (each letter/word) */
+.rotating-text-split {
+  display: inline-block;
+  overflow: hidden;
 }
