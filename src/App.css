@@ -1,0 +1,25 @@
+/* Make the <main> fill the viewport and scrollable */
+.main {
+    height: 100vh;             /* viewport height */
+    overflow-y: auto;          /* enable vertical scroll */
+    scroll-behavior: smooth;   /* smooth scroll when jumping to anchors */
+    
+    /* OPTIONAL: enable scroll snapping */
+    scroll-snap-type: y mandatory;
+  }
+  
+  /* Every section takes full viewport */
+  .section {
+    height: 100vh;             /* exactly one screen tall */
+    width: 100%;               /* full width */
+    position: relative;
+    
+    /* OPTIONAL: snap each section into view */
+    scroll-snap-align: start;
+    
+    /* OPTIONAL: for centering contents */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
