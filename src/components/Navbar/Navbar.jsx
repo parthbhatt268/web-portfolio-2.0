@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import logo from '../../assets/images/logo.png';
 
 const navLinks = [
   { id: 'work-experience', label: 'Work' },
@@ -35,8 +36,8 @@ export default function Navbar() {
     <nav className={`nav ${visible ? '' : 'nav--hidden'}`}>
       <div className="nav-container">
         <a href="#" className="nav-logo">
-          <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" />
-          <span>My Portfolio</span>
+          <img src={logo} alt="Logo" />
+          <span>Parth Bhatt</span>
         </a>
 
         <button

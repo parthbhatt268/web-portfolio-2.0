@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import desktopBg from '../../assets/images/desktop-bg.png';
+import desktopBg from '../../assets/images/desktop-bg-half.png';
 
 const Home = () => {
   return (
