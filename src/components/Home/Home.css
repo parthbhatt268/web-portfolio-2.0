@@ -190,7 +190,7 @@
   
   .connect-button {
     padding: 12px 20px;
-    font-size: 14px;
+    font-size: 16px;
     gap: 8px;
     margin-top: 0;
     width: fit-content;
@@ -245,7 +245,7 @@
   
   .connect-button {
     padding: 18px 18px;
-    font-size: 13px;
+    font-size: 15px;
     color: white;
     margin: 10px 20px;
     width: 83%;
@@ -342,7 +342,7 @@
     padding: 20px;
     width: 70vw;
     max-width: 280px;
-    margin: 10px 20px
+    margin: 10px 30px
   }
   
   .profile-image img {
@@ -354,7 +354,7 @@
     padding: 18px 18px;
     font-size: 13px;
     color: white;
-    margin: 10px 20px;
+    margin: 10px 30px;
     width: 83%
   }
   
