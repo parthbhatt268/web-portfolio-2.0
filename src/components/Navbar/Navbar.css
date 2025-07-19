@@ -79,8 +79,8 @@
 .nav-brand {
   display: flex;
   align-items: center;
-  color: #1a1a1a;
-  font-weight: 600;
+  color: white;
+  font-weight: 500;
   font-size: 16px;
   letter-spacing: 0.5px;
 }
@@ -224,39 +224,44 @@
 /* 9. Mobile Styles */
 @media (max-width: 767px) {
   .nav {
-    top: 15px;
+    top: 10px;
   }
   
   .nav-pill {
-    min-width: 320px;
-    padding: 10px 24px;
+    min-width: 380px;
+    padding: 16px 32px;
   }
   
   .nav-brand {
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 600;
   }
   
   .nav-icon {
-    font-size: 18px;
+    font-size: 22px;
   }
   
   .hamburger {
-    width: 18px;
-    height: 14px;
+    width: 24px;
+    height: 20px;
   }
   
   .hamburger span {
-    height: 1.5px;
+    height: 2.5px;
   }
 }
 
 @media (max-width: 480px) {
   .nav-pill {
-    min-width: 280px;
-    padding: 8px 20px;
+    min-width: 340px;
+    padding: 14px 28px;
   }
   
   .nav-brand {
-    font-size: 13px;
+    font-size: 17px;
+  }
+  
+  .nav-icon {
+    font-size: 20px;
   }
 }
