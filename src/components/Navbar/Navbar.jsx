@@ -35,19 +35,35 @@ export default function Navbar() {
   return (
     <nav className={`nav ${visible ? '' : 'nav--hidden'}`}>
       <div className="nav-container">
-        <a href="#" className="nav-logo">
-          <img src={logo} alt="Logo" />
-          <span>Parth Bhatt</span>
-        </a>
+        <div className="nav-pill">
+          {/* Left Icon */}
+          <div className="nav-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+          
+          {/* Center Text */}
+          <div className="nav-brand">
+            <span>Parth Bhatt</span>
+          </div>
+          
+          {/* Right Menu Icon */}
+          <button
+            className="nav-toggle"
+            onClick={() => setIsOpen(o => !o)}
+            aria-label="Toggle navigation"
+          >
+            <div className="hamburger">
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
 
-        <button
-          className="nav-toggle"
-          onClick={() => setIsOpen(o => !o)}
-          aria-label="Toggle navigation"
-        >
-          <i className={isOpen ? 'fas fa-times' : 'fas fa-bars'} />
-        </button>
-
+        {/* Mobile Menu */}
         <div className={`nav-menu ${isOpen ? 'open' : ''}`}>
           {navLinks.map(link => (
             <a

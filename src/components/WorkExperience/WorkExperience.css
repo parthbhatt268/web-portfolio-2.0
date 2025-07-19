@@ -1,23 +1,124 @@
-.work-experience-container {
-  min-height: 100vh;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* WorkExperience.css */
+
+/* 0. Google Font & theme */
+/* If you already import Roboto elsewhere, you can omit the @import here */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --theme-color: #2d129b;
 }
 
-.work-experience-title {
-  font-size: 2.5rem;
-  font-weight: bold;
+/* 1. Section wrapper */
+.work-experience {
+  font-family: 'Roboto', sans-serif;
   color: #fff;
-  text-align: center;
+  padding: 4rem 5%;
+}
+
+/* 2. Glass-morphic title */
+.we-title {
+  display: inline-block;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   margin-bottom: 2rem;
 }
+.glass {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
 
-.work-experience-content {
-  max-width: 800px;
-  text-align: center;
+/* 3. Cards list */
+.we-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* 4. Each card */
+.we-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* 4a. Info panel */
+.we-info {
+  flex: 1 1 300px;
+}
+.we-info h3 {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.we-dates,
+.we-role {
+  margin: 0.25rem 0;
   color: #ccc;
-  font-size: 1.1rem;
-} 
+  font-size: 0.9rem;
+}
+.we-tech {
+  margin: 0.75rem 0;
+}
+.we-tech__item {
+  display: inline-block;
+  background: var(--theme-color);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin: 0 0.5rem 0.5rem 0;
+}
+.we-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--theme-color);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.we-btn:hover {
+  background: rgba(45,18,155,0.8);
+}
+
+/* 4b. Image panel with glass wrapper */
+.we-image-wrapper {
+  flex: 0 0 300px;      /* increased from 260px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+.we-image {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* 5. Responsive: stack vertically on mobile */
+@media (max-width: 768px) {
+  .we-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .we-image-wrapper {
+    order: 1;
+    width: 90%;         /* increased from 80% */
+    margin: 1rem auto 0;
+  }
+  .we-info {
+    order: 2;
+  }
+}
+
+/* 6. Optional: even larger images on very wide screens */
+@media (min-width: 1200px) {
+  .we-image-wrapper {
+    flex: 0 0 350px;
+  }
+}
