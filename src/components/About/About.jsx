@@ -8,7 +8,7 @@ import ProfileCard from "../Effects/ProfileCard/ProfileCard";
 const About = () => {
   const text =
     "Hi,👋 my name is Parth and I am a Full stack Web Developer. " +
-    "I’m currently pursuing my Master's Degree 🎓 in Information System Management (ISM) " +
+    "I'm currently pursuing my Master's Degree 🎓 in Information System Management (ISM) " +
     "with the aim of achieving a 1:1 🎖 from University of Galway🏛. " +
     "You can connect with me on the following social media platforms. " +
     "Also, if you have any suggestions or comments for the portfolio you can connect with me on LinkedIn. " +
@@ -18,7 +18,6 @@ const About = () => {
     <section className="about-container">
       <h2 className="about-title">About</h2>
       <div className="about-content">
-        {/* left: card */}
         <div className="about-profile">
           <ProfileCard
             showUserInfo={true}
@@ -29,11 +28,10 @@ const About = () => {
             handle="parthbhatt268"
             status="Online"
             contactText="Contact Me"
-            onContactClick={() => console.log("Contact clicked")}
+            onContactClick={() => window.open('https://www.linkedin.com/in/parth-bhatt-092024186/', '_blank')}
           />
         </div>
 
-        {/* right: text */}
         <div className="about-text">
           <p>{text}</p>
         </div>

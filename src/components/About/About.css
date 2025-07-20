@@ -18,7 +18,7 @@
 }
 
 .about-content {
-  max-width: 800px;
+  max-width: 975px;
   text-align: center;
   color: #ccc;
   font-size: 1.1rem;
@@ -43,7 +43,13 @@
 .about-content {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 6.5rem;
+}
+
+@media (min-width: 769px) {
+  .about-content {
+    gap: 3.5rem;
+  }
 }
 
 /* let each panel take equal space */

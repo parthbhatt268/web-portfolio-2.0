@@ -15,6 +15,7 @@
   text-transform: uppercase;
   margin-bottom: 44px;
   letter-spacing: 1px;
+  color: #fff;
 }
 
 .skills-groups {
@@ -41,7 +42,7 @@
   font-size: 46px;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
-  color: #747474;
+  color: #fff;
   margin: 0;
 }
 
@@ -74,4 +75,5 @@
 .skill-label {
   font-size: 19px;
   text-transform: capitalize;
+  color: #fff;
 }

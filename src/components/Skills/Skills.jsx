@@ -48,9 +48,9 @@ export default function Skills() {
   };
 
   return (
-    <section id="my-stack" className="skills-section">
+    <section id="tech-stack" className="skills-section">
       <div className="skills-container">
-        <h2 className="skills-title">My Stack</h2>
+        <h2 className="skills-title">Tech Stack</h2>
 
         <div className="skills-groups">
           {Object.entries(LOGO).map(([category, items]) => (
