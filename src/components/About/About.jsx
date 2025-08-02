@@ -1,7 +1,6 @@
 // src/components/About/About.jsx
 import React from "react";
 import "./About.css";
-import parthPhoto from "../../assets/images/Parth1.png";
 
 import ProfileCard from "../Effects/ProfileCard/ProfileCard";
 

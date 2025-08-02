@@ -1,0 +1,212 @@
+.footer {
+    position: relative;
+    background: #12008a;
+    height: auto;
+    min-height: 150px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 28%;
+}
+
+.social-icon,
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    margin-left: -45px;
+    width: 130%;
+}
+
+.social-icon__item,
+.menu__item {
+    list-style: none;
+}
+
+.social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.social-icon__link img {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s;
+}
+
+.social-icon__link:hover {
+    transform: translateY(-10px);
+}
+
+.social-icon__link:hover img {
+    transform: scale(1.15) translateY(-10px);
+}
+
+.menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+}
+
+.menu__link:hover {
+    color: white;
+    opacity: 1;
+}
+
+.footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("../../assets/images/wave.png");
+    background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+    0% {
+        background-position-x: 1000px;
+    }
+
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: -1000px;
+    }
+
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+.glass-social-icon {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 12px;
+    margin: 0 12px 10px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-made-with {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-size: 1.6rem;
+    font-weight: 900;
+    box-shadow: 0 4px 16px rgba(18,0,138,0.15);
+    cursor: pointer;
+    z-index: 2000;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top:hover {
+    background: #fff;
+    color: #12008a;
+    transform: translateY(-4px) scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .social-icon {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 10px;
+    margin-left: -45px;
+    width: 130%
+  }
+  .social-icon__item {
+    flex: 0 0 33.33%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .social-icon__item:nth-child(n+4) {
+    flex-basis: 50%;
+  }
+} 
