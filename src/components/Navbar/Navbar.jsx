@@ -25,11 +25,16 @@ export default function Navbar() {
         setVisible(true);
       }
       setLastScrollY(currentScrollY);
+      
+      // Close mobile menu when scrolling
+      if (isOpen) {
+        setIsOpen(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isOpen]);
 
   return (
     <nav className={`nav ${visible ? '' : 'nav--hidden'}`}>

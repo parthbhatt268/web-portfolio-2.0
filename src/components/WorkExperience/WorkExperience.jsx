@@ -25,7 +25,7 @@ const experiences = [
 export default function WorkExperience() {
   return (
     <section id="work-experience" className="work-experience">
-      <h2 className="we-title glass">Work Experience</h2>
+      <h2 className="we-title">Work Experience</h2>
       <div className="we-list">
         {experiences.map(exp => (
           <div key={exp.company} className="we-card">

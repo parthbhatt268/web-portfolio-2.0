@@ -17,9 +17,23 @@
 
 /* 2. Glass-morphic title */
 .we-title {
-  display: inline-block;
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.we-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #ff0000;
 }
 .glass {
   background: rgba(255,255,255,0.2);

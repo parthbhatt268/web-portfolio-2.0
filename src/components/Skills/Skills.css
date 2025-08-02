@@ -10,12 +10,23 @@
 }
 
 .skills-title {
-  font-size: 34px;
-  font-family: 'Bebas Neue', sans-serif;
-  text-transform: uppercase;
-  margin-bottom: 44px;
-  letter-spacing: 1px;
+  font-size: 2.5rem;
+  font-weight: bold;
   color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.skills-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #ff0000;
 }
 
 .skills-groups {
