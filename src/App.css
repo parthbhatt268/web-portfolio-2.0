@@ -46,3 +46,24 @@ body,
   align-items: center;
   justify-content: center;
 }
+
+/* Alternating section colors */
+.work-experience {
+  background-color: #000000;
+}
+
+.projects-container {
+  background-color: #12008a;
+}
+
+.skills-section {
+  background-color: #000000;
+}
+
+.certificate-section {
+  background-color: #12008a;
+}
+
+.about-container {
+  background-color: #000000;
+}
