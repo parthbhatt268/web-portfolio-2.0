@@ -36,6 +36,7 @@ const Footer = () => {
                 <div className="wave" id="wave3"></div>
                 <div className="wave" id="wave4"></div>
             </div>
+            <h3 className="footer-connect-text">Let's connect on social platforms</h3>
             <ul className="social-icon">
                 <li className="social-icon__item">
                     <div className="glass-social-icon">
@@ -73,13 +74,7 @@ const Footer = () => {
                     </div>
                 </li>
             </ul>
-            <ul className="menu">
-                <li className="menu__item"><a className="menu__link" href="#home">Home</a></li>
-                <li className="menu__item"><a className="menu__link" href="#about">About</a></li>
-                <li className="menu__item"><a className="menu__link" href="#work">Experience</a></li>
-                <li className="menu__item"><a className="menu__link" href="#skills">Skills</a></li>
-                <li className="menu__item"><a className="menu__link" href="#projects">Projects</a></li>
-            </ul>
+
             <p>&copy;2024 Parth Bhatt | All Rights Reserved</p>
             <div className="footer-made-with">Made with <span role="img" aria-label="love">❤️</span> in Galway, Ireland</div>
             {showTopBtn && (

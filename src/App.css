@@ -1,3 +1,22 @@
+/* CSS Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+body,
+.App {
+  background-color: #090a17;
+  overflow-x: hidden;
+}
+
 /* Make the <main> fill the viewport and scrollable */
 .main {
   height: 100vh;
@@ -26,9 +45,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-body,
-.App {
-  background-color: #090a17;
 }
