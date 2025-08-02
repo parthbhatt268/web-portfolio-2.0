@@ -36,7 +36,7 @@ const Footer = () => {
                 <div className="wave" id="wave3"></div>
                 <div className="wave" id="wave4"></div>
             </div>
-            <h3 className="footer-connect-text">Let's connect on social platforms</h3>
+            <h3 className="footer-connect-text">Check out my work on below platforms</h3>
             <ul className="social-icon">
                 <li className="social-icon__item">
                     <div className="glass-social-icon">

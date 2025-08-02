@@ -2,7 +2,7 @@
     position: relative;
     background: #12008a;
     height: auto;
-    min-height: 550px;
+    min-height: 450px;
     padding: 50px 50px;
     display: flex;
     justify-content: center;
@@ -159,7 +159,7 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 80px;
     flex-wrap: nowrap;
 }
 
@@ -206,7 +206,7 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
-    margin-bottom: 10px;
+    margin-bottom: 80px;
   }
   .social-icon__link img {
     width: 28px;
