@@ -17,7 +17,7 @@ function WorkExperience() {
         "AWS Cloud Services & Deployment"
       ],
       image: sirenImage,
-      visitLink: "#"
+      visitLink: "https://siren.io/"
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ function WorkExperience() {
         "MySQL & Database Optimization"
       ],
       image: jioImage,
-      visitLink: "#"
+      visitLink: "https://www.jio.com/"
     }
   ];
 
@@ -70,9 +70,14 @@ function WorkExperience() {
                   ))}
                 </ol>
 
-                <button className="visit-company-btn">
+                <a 
+                  href={work.visitLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="visit-company-btn"
+                >
                   Visit Company Site →
-                </button>
+                </a>
               </div>
               
               <div className="work-experience-image">

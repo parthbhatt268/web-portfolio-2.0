@@ -20,7 +20,7 @@ const Education = () => {
         "Cloud Computing"
       ],
       image: masterUniversity,
-      visitLink: "#"
+      visitLink: "https://www.universityofgalway.ie/"
     },
     {
       id: 2,
@@ -38,7 +38,7 @@ const Education = () => {
         "Data Encryption"
       ],
       image: bachelorUniversity,
-      visitLink: "#"
+      visitLink: "https://mu.ac.in/"
     }
   ];
 
@@ -83,9 +83,14 @@ const Education = () => {
                   ))}
                 </ol>
 
-                <button className="visit-university-btn">
+                <a 
+                  href={edu.visitLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="visit-university-btn"
+                >
                   Visit University Site →
-                </button>
+                </a>
               </div>
               
               <div className="education-image">
