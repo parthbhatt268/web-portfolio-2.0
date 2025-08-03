@@ -1,14 +1,14 @@
 import React from 'react';
 import './Projects.css';
-import rapidBasketImage from '../../assets/images/rapidBasket.png';
+import rapidBasketImage from '../../assets/images/rapis-basket.png';
 import chatAppImage from '../../assets/images/chat-app.png';
 
 const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      title: "Rapid Basket",
-      description: "A end to end Food Ordering Website",
+      title: "Rapid Basket - A end to end Food Ordering Website",
+      description: "",
       techStack: [
         "React, Redux, Redux Toolkit Thunk",
         "HTML, CSS, Javascript",
