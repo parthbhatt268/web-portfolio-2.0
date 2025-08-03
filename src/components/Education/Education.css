@@ -1,4 +1,4 @@
-.work-experience-section {
+.education-section {
   min-height: 100vh;
   padding: 4rem 2rem;
   display: flex;
@@ -10,13 +10,13 @@
   color: #fff;
 }
 
-.work-experience-container {
+.education-container {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
 
-.work-experience-title {
+.education-title {
   font-size: 2.5rem;
   font-weight: bold;
   color: #fff;
@@ -25,7 +25,7 @@
   position: relative;
 }
 
-.work-experience-title::after {
+.education-title::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -35,13 +35,13 @@
   background-color: #ff0000;
 }
 
-.work-experience-content {
+.education-content {
   display: flex;
   flex-direction: column;
   gap: 4rem;
 }
 
-.work-experience-item {
+.education-item {
   display: grid;
   grid-template-columns: 1fr 450px;
   gap: 3rem;
@@ -49,25 +49,25 @@
   padding: 2rem 0;
 }
 
-.work-experience-item:nth-child(even) {
+.education-item:nth-child(even) {
   grid-template-columns: 450px 1fr;
 }
 
-.work-experience-item:nth-child(even) .work-experience-text {
+.education-item:nth-child(even) .education-text {
   order: 2;
 }
 
-.work-experience-item:nth-child(even) .work-experience-image {
+.education-item:nth-child(even) .education-image {
   order: 1;
 }
 
-.work-experience-text {
+.education-text {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
 }
 
-.work-experience-position {
+.education-degree {
   font-size: 1.8rem;
   font-weight: 600;
   color: #fff;
@@ -75,14 +75,20 @@
   margin-bottom: 0.5rem;
 }
 
-.work-experience-details {
+.education-course {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.education-details {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.work-experience-detail {
+.education-detail {
   display: flex;
   align-items: center;
   font-size: 0.95rem;
@@ -98,7 +104,7 @@
   color: #ccc;
 }
 
-.core-tech-list {
+.core-subjects-list {
   list-style: decimal;
   padding-left: 1.5rem;
   margin: 0.5rem 0;
@@ -107,13 +113,13 @@
   gap: 0.3rem;
 }
 
-.core-tech-item {
+.core-subject-item {
   font-size: 0.95rem;
   color: #ccc;
   line-height: 1.4;
 }
 
-.visit-company-btn {
+.visit-university-btn {
   background-color: #12008a;
   color: #fff;
   border: none;
@@ -127,12 +133,12 @@
   margin-top: 1rem;
 }
 
-.visit-company-btn:hover {
+.visit-university-btn:hover {
   background-color: #0f0070;
   transform: translateY(-2px);
 }
 
-.work-experience-image {
+.education-image {
   width: 108%;
   height: 378px;
   border-radius: 8px;
@@ -140,107 +146,106 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.work-experience-image img {
+.education-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.work-experience-image:hover img {
+.education-image:hover img {
   transform: scale(1.05);
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .work-experience-section {
+  .education-section {
     padding: 2rem 1rem;
   }
 
-  .work-experience-title {
+  .education-title {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
   }
 
-  .work-experience-title::after {
+  .education-title::after {
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .work-experience-content {
+  .education-content {
     gap: 2.5rem;
   }
 
-  .work-experience-item {
+  .education-item {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     text-align: left;
   }
 
-  .work-experience-item:nth-child(even) {
+  .education-item:nth-child(even) {
     grid-template-columns: 1fr;
   }
 
-  .work-experience-text {
+  .education-text {
     order: 2;
   }
 
-  .work-experience-image {
+  .education-image {
     order: 1;
   }
 
-  .work-experience-position {
+  .education-degree {
     font-size: 1.5rem;
   }
 
-  .work-experience-image {
+  .education-image {
     height: 250px;
     margin: 0 auto;
     max-width: 100%;
-    width: 100%;
   }
 
-  .visit-company-btn {
+  .visit-university-btn {
     align-self: center;
     width: fit-content;
   }
 
-  .core-tech-list {
+  .core-subjects-list {
     padding-left: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .work-experience-section {
+  .education-section {
     padding: 1.5rem 0.8rem;
   }
 
-  .work-experience-title {
+  .education-title {
     font-size: 1.8rem;
   }
 
-  .work-experience-position {
+  .education-degree {
     font-size: 1.3rem;
   }
 
-  .work-experience-image {
+  .education-image {
     height: 200px;
   }
 
-  .work-experience-details {
+  .education-details {
     gap: 0.3rem;
   }
 
-  .work-experience-detail {
+  .education-detail {
     font-size: 0.9rem;
   }
 
-  .core-tech-item {
+  .core-subject-item {
     font-size: 0.9rem;
   }
 
-  .visit-company-btn {
+  .visit-university-btn {
     padding: 0.7rem 1.2rem;
     font-size: 0.85rem;
   }

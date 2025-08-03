@@ -1,53 +1,89 @@
 import React from 'react';
 import './WorkExperience.css';
-import sirenImg from '../../assets/images/SirenPhoto.jpg';
-import jioImg from '../../assets/images/jio1.jpg';
+import sirenImage from '../../assets/images/SirenPhoto.jpg';
+import jioImage from '../../assets/images/jio.jpg';
 
-const experiences = [
-  {
-    company: 'Siren',
-    dates: 'Jan 2024 – Ongoing',
-    role: 'Software Development Engineer',
-    tech: ['React', 'Node.js', 'AWS'],
-    link: 'https://siren.io/',
-    image: sirenImg,
-  },
-  {
-    company: 'Reliance Jio',
-    dates: 'Nov 2020 – Jul 2023',
-    role: 'Software Development Engineer',
-    tech: ['Java', 'Spring Boot', 'MySQL'],
-    link: 'https://www.jio.com/',
-    image: jioImg,
-  },
-];
+function WorkExperience() {
+  const workExperienceData = [
+    {
+      id: 1,
+      position: "Software Developer Engineer",
+      company: "Siren",
+      duration: "Jan 2024 - Present",
+      coreTech: [
+        "React.js & Next.js Development",
+        "Node.js & Express.js Backend",
+        "MongoDB & Database Design",
+        "AWS Cloud Services & Deployment"
+      ],
+      image: sirenImage,
+      visitLink: "#"
+    },
+    {
+      id: 2,
+      position: "Software Developer Engineer",
+      company: "Reliance Jio",
+      duration: "Nov 2020 - July 2023",
+      coreTech: [
+        "Java & Spring Boot Framework",
+        "Microservices Architecture",
+        "MySQL & Database Optimization"
+      ],
+      image: jioImage,
+      visitLink: "#"
+    }
+  ];
 
-export default function WorkExperience() {
   return (
-    <section id="work-experience" className="work-experience">
-      <h2 className="we-title">Work Experience</h2>
-      <div className="we-list">
-        {experiences.map(exp => (
-          <div key={exp.company} className="we-card">
-            <div className="we-info">
-              <h3>{exp.company}</h3>
-              <p className="we-dates">{exp.dates}</p>
-              <p className="we-role">{exp.role}</p>
-              <div className="we-tech">
-                {exp.tech.map(t => (
-                  <span key={t} className="we-tech__item">{t}</span>
-                ))}
+    <section className="work-experience-section" id="work-experience">
+      <div className="work-experience-container">
+        <h2 className="work-experience-title">Work Experience</h2>
+        
+        <div className="work-experience-content">
+          {workExperienceData.map((work) => (
+            <div key={work.id} className="work-experience-item">
+              <div className="work-experience-text">
+                <h3 className="work-experience-position">
+                  {work.position}
+                </h3>
+                
+                <div className="work-experience-details">
+                  <div className="work-experience-detail">
+                    <span className="detail-label">Company</span>
+                    <span className="detail-value"> - {work.company}</span>
+                  </div>
+                  <div className="work-experience-detail">
+                    <span className="detail-label">Duration</span>
+                    <span className="detail-value"> - {work.duration}</span>
+                  </div>
+                  <div className="work-experience-detail">
+                    <span className="detail-label">Core Tech worked on</span>
+                    <span className="detail-value"> -</span>
+                  </div>
+                </div>
+
+                <ol className="core-tech-list">
+                  {work.coreTech.map((tech, index) => (
+                    <li key={index} className="core-tech-item">
+                      {tech}
+                    </li>
+                  ))}
+                </ol>
+
+                <button className="visit-company-btn">
+                  Visit Company Site →
+                </button>
               </div>
-              <a href={exp.link} className="we-btn" target="_blank" rel="noopener noreferrer">
-                Visit Site →
-              </a>
+              
+              <div className="work-experience-image">
+                <img src={work.image} alt={work.company} />
+              </div>
             </div>
-            <div className="we-image-wrapper glass">
-              <img src={exp.image} alt={exp.company} className="we-image" />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+
+export default WorkExperience;
