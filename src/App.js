@@ -9,6 +9,7 @@ import Education from './components/Education/Education';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
 import './App.css';
+
 function App() {
   return (
     <div className="App">
@@ -25,4 +26,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;
