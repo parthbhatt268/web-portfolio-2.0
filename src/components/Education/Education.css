@@ -49,18 +49,6 @@
   padding: 2rem 0;
 }
 
-.education-item:nth-child(even) {
-  grid-template-columns: 450px 1fr;
-}
-
-.education-item:nth-child(even) .education-text {
-  order: 2;
-}
-
-.education-item:nth-child(even) .education-image {
-  order: 1;
-}
-
 .education-text {
   display: flex;
   flex-direction: column;

@@ -49,18 +49,6 @@
   padding: 2rem 0;
 }
 
-.work-experience-item:nth-child(even) {
-  grid-template-columns: 450px 1fr;
-}
-
-.work-experience-item:nth-child(even) .work-experience-text {
-  order: 2;
-}
-
-.work-experience-item:nth-child(even) .work-experience-image {
-  order: 1;
-}
-
 .work-experience-text {
   display: flex;
   flex-direction: column;
@@ -134,7 +122,7 @@
 
 .work-experience-image {
   width: 108%;
-  height: 378px;
+  height: 300px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -225,7 +213,7 @@
   }
 
   .work-experience-image {
-    height: 200px;
+    height: 220px;
   }
 
   .work-experience-details {

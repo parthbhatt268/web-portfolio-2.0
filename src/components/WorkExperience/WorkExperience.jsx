@@ -21,7 +21,7 @@ function WorkExperience() {
     },
     {
       id: 2,
-      position: "Software Developer Engineer",
+      position: "Senior Software Developer Engineer",
       company: "Reliance Jio",
       duration: "Nov 2020 - July 2023",
       coreTech: [
