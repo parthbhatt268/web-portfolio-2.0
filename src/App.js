@@ -21,8 +21,8 @@ function App() {
       <Skills />
       <Certificate />
       <Education />
-      <About />
       <RecentWork />
+      <About />
       <Footer />
     </div>
   );
