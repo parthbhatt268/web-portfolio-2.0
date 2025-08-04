@@ -11,7 +11,7 @@ const About = () => {
     "with the aim of achieving a 1:1 🎖 from University of Galway🏛. " +
     "You can connect with me on the following social media platforms. " +
     "Also, if you have any suggestions or comments for the portfolio you can connect with me on LinkedIn. " +
-    "Thank you for visiting my portfolio. 😊";
+    "Thank you for visiting my portfolio. 😁";
 
   return (
     <section className="about-container">
