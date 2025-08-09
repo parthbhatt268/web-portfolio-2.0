@@ -6,12 +6,12 @@ import ProfileCard from "../Effects/ProfileCard/ProfileCard";
 
 const About = () => {
   const text =
-    "Hi,👋 my name is Parth and I am a Full stack Web Developer. " +
-    "I'm currently pursuing my Master's Degree 🎓 in Information System Management (ISM) " +
-    "with the aim of achieving a 1:1 🎖 from University of Galway🏛. " +
-    "You can connect with me on the following social media platforms. " +
-    "Also, if you have any suggestions or comments for the portfolio you can connect with me on LinkedIn. " +
-    "Thank you for visiting my portfolio. 😁";
+    "Hi,👋 my name is Parth and I am currently at Siren as a Software Engineer. " +
+    "I have been working in the field of Software Engineering for almost 4.5 years now. " +
+    "I have First Class Honours 🎖️ in my Master's Degree 🎓 in Information System Management (ISM) " +
+    "from University of Galway🏛. " +
+    "I have passion to build Software which make sense in real world, and now with using AI and Machine Learning." +
+    "Thanks for taking your time to visit my page. 😁";
 
   return (
     <section className="about-container">

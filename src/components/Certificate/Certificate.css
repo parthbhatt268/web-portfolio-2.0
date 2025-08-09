@@ -220,4 +220,18 @@
   .certificate-score {
     font-size: 0.65rem;
   }
+}
+
+/* Mobile Responsive - Title */
+@media (max-width: 768px) {
+  .certificate-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .certificate-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 } 

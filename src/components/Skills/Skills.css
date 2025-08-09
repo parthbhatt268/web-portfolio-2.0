@@ -49,8 +49,9 @@
 }
 
 .skills-category p {
-  font-size: 46px;
-  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
   text-transform: uppercase;
   color: #fff;
   margin: 0;
@@ -65,10 +66,10 @@
 .skill-card {
   display: flex;
   align-items: center;
-  gap: 13px;
-  padding: 9px;
+  gap: 8px;
+  padding: 6px 10px;
   border: 1.5px solid #3d3d3d;
-  border-radius: 10px;
+  border-radius: 8px;
   transition: box-shadow 0.2s;
 }
 
@@ -77,13 +78,28 @@
 }
 
 .skill-icon {
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 }
 
 .skill-label {
-  font-size: 19px;
+  font-size: 14px;
   text-transform: capitalize;
   color: #fff;
+  white-space: nowrap;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .skills-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .skills-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
