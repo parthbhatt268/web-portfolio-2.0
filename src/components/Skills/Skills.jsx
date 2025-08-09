@@ -44,7 +44,7 @@ import githubLogo from "../../assets/logo/github.jpg";
 import npmLogo from "../../assets/logo/npm.png";
 import yarnLogo from "../../assets/logo/yarn.png";
 import groovyLogo from "../../assets/logo/groovy.png";
-
+import ymlLogo from "../../assets/logo/yml.png";
 // Operating Systems
 import linuxLogo from "../../assets/logo/linux.png";
 import windowsLogo from "../../assets/logo/windows.png";
@@ -55,7 +55,7 @@ const dummyIcon = "https://via.placeholder.com/32x32/333333/ffffff?text=Tech";
 
 export default function Skills() {
   const LOGO = {
-    frontend: [
+    "Frontend": [
       { name: "HTML", icon: htmlLogo },
       { name: "CSS", icon: cssLogo },
       { name: "JavaScript", icon: jsLogo },
@@ -66,7 +66,7 @@ export default function Skills() {
       { name: "Material UI", icon: materialUILogo },
       { name: "Bootstrap", icon: bootstrapLogo },
     ],
-    "backend & apis": [
+    "Backend & APIs": [
       { name: "Node.js", icon: nodeLogo },
       { name: "Express.js", icon: expressLogo },
       { name: "REST API", icon: restLogo },
@@ -76,7 +76,7 @@ export default function Skills() {
       { name: "Stripe Payments", icon: stripeLogo },
       { name: "OpenAI LLM (API)", icon: openaiLogo },
     ],
-    "databases & test": [
+    "Databases & Test": [
       { name: "MongoDB", icon: mongodbLogo },
       { name: "MariaDB", icon: mariadbLogo },
       { name: "SQL", icon: mysqlLogo },
@@ -85,22 +85,22 @@ export default function Skills() {
       { name: "Jest", icon: jestLogo },
       { name: "Cypress", icon: cypressLogo },
     ],
-    "devops, cloud & ci/cd": [
+    "DevOps, Cloud & CI/CD": [
       { name: "Docker", icon: dockerLogo },
       { name: "Kubernetes", icon: kubernetesLogo },
       { name: "Jenkins (CI/CD)", icon: jenkinsLogo },
       { name: "AWS", icon: awsLogo },
       { name: "Google Cloud", icon: googleCloudLogo },
     ],
-    "version control & other tech": [
+    "Version Control & Other Tech": [
       { name: "Git", icon: gitLogo },
       { name: "GitHub", icon: githubLogo },
       { name: "NPM", icon: npmLogo },
       { name: "Yarn", icon: yarnLogo },
       { name: "Groovy", icon: groovyLogo },
-      { name: "YAML", icon: dummyIcon },
+      { name: "YAML", icon: ymlLogo },
     ],
-    "operating systems": [
+    "Operating Systems": [
       { name: "Linux", icon: linuxLogo },
       { name: "Windows", icon: windowsLogo },
       { name: "Mac", icon: macLogo },
