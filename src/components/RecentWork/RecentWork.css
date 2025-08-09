@@ -140,11 +140,13 @@
 }
 
 .marketplace-btn {
-  background-color: #12008a;
+  background-color: #333;
+  border: 2px solid #666;
 }
 
 .marketplace-btn:hover {
-  background-color: #0f0070;
+  background-color: #555;
+  border-color: #888;
   transform: translateY(-2px);
 }
 
