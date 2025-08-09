@@ -31,13 +31,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.89)   0%,
-    rgba(0, 0, 0, 0.815)  45%,
-    rgba(0,0,0,0.3)  80%,
-    rgba(0,0,0,0)  100%
-  );
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.89) 0%,
+      rgba(0, 0, 0, 0.815) 45%,
+      rgba(0, 0, 0, 0.3) 80%,
+      rgba(0, 0, 0, 0) 100%);
   pointer-events: none;
   z-index: 2;
 }
@@ -61,7 +59,7 @@
   font-size: clamp(2rem, 6vw, 3.5rem);
   line-height: 1.1;
   font-weight: 700;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* 7. Subtitle paragraph */
@@ -78,10 +76,10 @@
   display: inline-block;
   color: #fff;
   /* Frosted-glass overlay */
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   font-weight: 600;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
@@ -159,27 +157,28 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 80px; /* Room for navbar */
+    padding-top: 80px;
+    /* Room for navbar */
   }
-  
+
   .hero__content h1 {
     font-size: clamp(2.5rem, 8vw, 3rem);
     margin-bottom: 1rem;
     margin-left: 20px;
   }
-  
+
   .hero__subtitle {
     font-size: clamp(1.4rem, 5vw, 1.6rem);
     line-height: 1.4;
     margin-bottom: 2rem;
     margin-left: 20px;
   }
-  
+
   .rotating-text-inline {
     padding: 0.3rem 0.6rem;
     font-size: 1.1em;
   }
-  
+
   .profile-card {
     display: flex;
     margin-bottom: 2rem;
@@ -187,7 +186,7 @@
     max-width: 300px;
     padding: 24px;
   }
-  
+
   .connect-button {
     padding: 12px 20px;
     font-size: 16px;
@@ -197,7 +196,7 @@
     text-align: center;
     justify-content: center;
   }
-  
+
   .linkedin-icon {
     width: 16px;
     height: 16px;
@@ -206,53 +205,58 @@
 
 @media (max-width: 480px) {
   .hero__content {
-    left: 15px;
-    right: 15px;
+    left: 50%;
+    right: auto;
     top: 50%;
+    transform: translate(-50%, -50%);
     padding-top: 70px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
   }
-  
+
   .hero__content h1 {
     font-size: clamp(2.2rem, 7vw, 2.8rem);
     margin-bottom: 1.2rem;
-    margin-left: 15px;
+    margin-left: 0;
   }
-  
+
   .hero__subtitle {
     font-size: clamp(1.2rem, 4.5vw, 1.4rem);
     line-height: 1.5;
     margin-bottom: 1.8rem;
-    margin-left: 15px;
+    margin-left: 0;
   }
-  
+
   .rotating-text-inline {
     padding: 0.25rem 0.5rem;
     font-size: 1em;
   }
-  
+
   .profile-card {
     margin-bottom: 1.5rem;
     padding: 20px;
     width: 70vw;
     max-width: 280px;
-    margin: 10px 20px;
+    margin: 10px auto;
   }
-  
+
   .profile-image img {
     width: 275px;
     height: 270px;
   }
-  
+
   .connect-button {
     padding: 18px 18px;
     font-size: 15px;
     color: white;
-    margin: 10px 20px;
+    margin: 10px auto;
     width: 83%;
     text-align: center;
     justify-content: center;
+    display: block;
   }
-  
+
   .linkedin-icon {
     width: 14px;
     height: 14px;
@@ -261,7 +265,8 @@
 
 /* 12. Profile Card */
 .profile-card {
-  display: none; /* Hidden by default, only shown on mobile */
+  display: none;
+  /* Hidden by default, only shown on mobile */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -316,12 +321,12 @@
     max-width: 300px;
     padding: 24px;
   }
-  
+
   .profile-image img {
     width: 120px;
     height: 180px;
   }
-  
+
   .connect-button {
     padding: 12px 20px;
     font-size: 14px;
@@ -329,7 +334,7 @@
     margin-top: 0;
     width: fit-content;
   }
-  
+
   .linkedin-icon {
     width: 16px;
     height: 16px;
@@ -340,16 +345,13 @@
   .profile-card {
     margin-bottom: 1.5rem;
     padding: 20px;
-    width: 70vw;
-    max-width: 280px;
-    margin: 10px 30px
   }
-  
+
   .profile-image img {
     width: 275px;
     height: 270px;
   }
-  
+
   .connect-button {
     padding: 18px 18px;
     font-size: 13px;
@@ -357,7 +359,7 @@
     margin: 10px 30px;
     width: 83%
   }
-  
+
   .linkedin-icon {
     width: 14px;
     height: 14px;
@@ -370,20 +372,20 @@
     max-width: 450px;
     padding: 20px 24px;
   }
-  
+
   .profile-image img {
     width: 70px;
     height: 70px;
   }
-  
+
   .profile-info h3 {
     font-size: 20px;
   }
-  
+
   .profile-info p {
     font-size: 15px;
   }
-  
+
   .profile-info p:last-child {
     font-size: 13px;
   }
