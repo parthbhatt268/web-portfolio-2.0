@@ -6,11 +6,11 @@ import ProfileCard from "../Effects/ProfileCard/ProfileCard";
 
 const About = () => {
   const text =
-    "Hi,👋 my name is Parth and I am currently at Siren as a Software Engineer. " +
-    "I have been working in the field of Software Engineering for almost 4.5 years now. " +
-    "I have First Class Honours 🎖️ in my Master's Degree 🎓 in Information System Management (ISM) " +
-    "from University of Galway🏛. " +
-    "I have passion to build Software which make sense in real world, and now with using AI and Machine Learning." +
+    "Hi 👋, my name is Parth and I am currently working at Siren as a Software Engineer. " +
+    "I have been working in the field of Software Engineering for almost 4.5 years now." +
+    "I achieved First Class Honours 🎖️ in my Master's Degree 🎓 in Information Systems Management (ISM) " +
+    "from the University of Galway 🏛. " +
+    "I have a passion for building software that makes sense in the real world, and now I am also working with AI and Machine Learning." +
     "Thanks for taking your time to visit my page. 😁";
 
   return (
@@ -27,7 +27,12 @@ const About = () => {
             handle="parthbhatt268"
             status="Online"
             contactText="Contact Me"
-            onContactClick={() => window.open('https://www.linkedin.com/in/parth-bhatt-092024186/', '_blank')}
+            onContactClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/parth-bhatt-092024186/",
+                "_blank"
+              )
+            }
           />
         </div>
 

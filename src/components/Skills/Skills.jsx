@@ -107,13 +107,13 @@ export default function Skills() {
     ],
     "Databases & Test": [
       { name: "MongoDB", icon: mongodbLogo, link: "https://www.mongodb.com/" },
-      { name: "MariaDB", icon: mariadbLogo, link: "https://mariadb.org/" },
-      { name: "SQL", icon: mysqlLogo, link: "https://www.mysql.com/" },
       {
         name: "Elasticsearch",
         icon: elasticsearchLogo,
         link: "https://www.elastic.co/elasticsearch/",
       },
+      { name: "MariaDB", icon: mariadbLogo, link: "https://mariadb.org/" },
+      { name: "SQL", icon: mysqlLogo, link: "https://www.mysql.com/" },
       {
         name: "OpenSearch",
         icon: opensearchLogo,
