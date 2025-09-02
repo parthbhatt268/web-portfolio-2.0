@@ -13,6 +13,17 @@ export default function Navbar() {
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  // Smooth scroll to section
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   // Scroll listener
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +68,10 @@ export default function Navbar() {
                 key={link.id}
                 href={`#${link.id}`}
                 className="nav-link-desktop"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.id);
+                }}
               >
                 {link.label}
               </a>
@@ -84,7 +99,11 @@ export default function Navbar() {
               key={link.id}
               href={`#${link.id}`}
               className="nav-item"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(link.id);
+                setIsOpen(false);
+              }}
             >
               {link.label}
             </a>

@@ -14,7 +14,7 @@ const About = () => {
     "Thanks for taking your time to visit my page. 😁";
 
   return (
-    <section className="about-container">
+    <section id="about" className="about-container">
       <h2 className="about-title">About</h2>
       <div className="about-content">
         <div className="about-profile">

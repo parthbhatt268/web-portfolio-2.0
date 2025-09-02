@@ -161,7 +161,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="tech-stack" className="skills-section">
+    <section id="skills" className="skills-section">
       <div className="skills-container">
         <h2 className="skills-title">Tech Stack</h2>
 
