@@ -102,7 +102,7 @@ const Footer = () => {
         </li>
       </ul>
 
-      <p>&copy;2025 Parth Bhatt | All Rights Reserved</p>
+      <p>&copy;2026 Parth Bhatt | All Rights Reserved</p>
       <div className="footer-made-with">
         Made with{" "}
         <span role="img" aria-label="love">
