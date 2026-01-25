@@ -29,7 +29,7 @@ const RecentWork = () => {
                 </div>
                 <div className="work-detail">
                   <span className="detail-label">Downloads</span>
-                  <span className="detail-value"> - 20 installs</span>
+                  <span className="detail-value"> - 22 installs</span>
                 </div>
                 <div className="work-detail">
                   <span className="detail-label">Version</span>
