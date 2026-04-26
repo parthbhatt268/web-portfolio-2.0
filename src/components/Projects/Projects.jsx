@@ -2,9 +2,11 @@ import React from "react";
 import "./Projects.css";
 import rapidBasketImage from "../../assets/images/rapis-basket.png";
 import chatAppImage from "../../assets/images/chat-app.png";
+import brainStackImage from "../../assets/images/brain-stack-1.png";
 import projectsData from "./data.json";
 
 const IMAGES = {
+  brainStack: brainStackImage,
   rapidBasket: rapidBasketImage,
   chatApp: chatAppImage,
 };

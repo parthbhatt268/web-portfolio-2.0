@@ -1,6 +1,22 @@
 [
   {
     "id": 1,
+    "title": "Brain Stack - AI-powered Visual Knowledge Graph Platform",
+    "description": "",
+    "techStack": [
+      "Frontend - React 19 + Vite, ReactFlow (Graph Visualisation)",
+      "Backend - Node.js + Express REST API",
+      "Database - Supabase PostgreSQL + pgvector",
+      "AI - Google Gemini API (content classification & embeddings)",
+      "Auth - Supabase Auth + Google OAuth",
+      "Deployment - Netlify (Frontend) + Render (Backend)"
+    ],
+    "imageKey": "brainStack",
+    "liveLink": "https://brain-stacked.netlify.app/",
+    "githubLink": "https://github.com/parthbhatt268/brain-stack"
+  },
+  {
+    "id": 2,
     "title": "Rapid Basket - A end to end Food Ordering Website",
     "description": "",
     "techStack": [
@@ -16,7 +32,7 @@
     "githubLink": "https://github.com/parthbhatt268/ui-rapidBasket"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Fire Chat - A Web based group chatting application",
     "description": "",
     "techStack": [
