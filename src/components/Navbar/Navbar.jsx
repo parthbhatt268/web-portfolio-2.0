@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-
-const navLinks = [
-  { id: 'work-experience', label: 'Work' },
-  { id: 'projects',      label: 'Projects' },
-  { id: 'skills',        label: 'Skills' },
-  { id: 'about',         label: 'About' },
-];
+import data from './data.json';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +11,7 @@ export default function Navbar() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
+      element.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
@@ -36,7 +30,7 @@ export default function Navbar() {
         setVisible(true);
       }
       setLastScrollY(currentScrollY);
-      
+
       // Close mobile menu when scrolling
       if (isOpen) {
         setIsOpen(false);
@@ -57,13 +51,13 @@ export default function Navbar() {
               <span style={{ fontSize: '20px' }}>🚀</span>
             </div>
             <div className="nav-brand">
-              <span>Parth Bhatt</span>
+              <span>{data.brand}</span>
             </div>
           </div>
-          
+
           {/* Desktop Navigation Links */}
           <div className="nav-links-desktop">
-            {navLinks.map(link => (
+            {data.navLinks.map(link => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
@@ -77,7 +71,7 @@ export default function Navbar() {
               </a>
             ))}
           </div>
-          
+
           {/* Mobile Menu Toggle */}
           <button
             className="nav-toggle"
@@ -94,7 +88,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div className={`nav-menu ${isOpen ? 'open' : ''}`}>
-          {navLinks.map(link => (
+          {data.navLinks.map(link => (
             <a
               key={link.id}
               href={`#${link.id}`}

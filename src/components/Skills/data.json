@@ -1,0 +1,52 @@
+{
+  "Frontend": [
+    { "name": "HTML",         "iconKey": "html",       "link": "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    { "name": "CSS",          "iconKey": "css",        "link": "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    { "name": "JavaScript",   "iconKey": "js",         "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { "name": "React",        "iconKey": "react",      "link": "https://reactjs.org/" },
+    { "name": "Next.js",      "iconKey": "next",       "link": "https://nextjs.org/" },
+    { "name": "AngularJS",    "iconKey": "angular",    "link": "https://angular.io/" },
+    { "name": "Redux Toolkit","iconKey": "redux",      "link": "https://redux-toolkit.js.org/" },
+    { "name": "Material UI",  "iconKey": "materialUI", "link": "https://mui.com/" },
+    { "name": "Bootstrap",    "iconKey": "bootstrap",  "link": "https://getbootstrap.com/" }
+  ],
+  "Backend & APIs": [
+    { "name": "Node.js",          "iconKey": "node",    "link": "https://nodejs.org/" },
+    { "name": "Express.js",       "iconKey": "express", "link": "https://expressjs.com/" },
+    { "name": "REST API",         "iconKey": "rest",    "link": "https://restfulapi.net/" },
+    { "name": "GraphQL",          "iconKey": "graphql", "link": "https://graphql.org/" },
+    { "name": "JWT",              "iconKey": "jwt",     "link": "https://jwt.io/" },
+    { "name": "Firebase",         "iconKey": "firebase","link": "https://firebase.google.com/" },
+    { "name": "Stripe Payments",  "iconKey": "stripe",  "link": "https://stripe.com/" },
+    { "name": "OpenAI LLM (API)", "iconKey": "openai",  "link": "https://openai.com/api/" }
+  ],
+  "Databases & Test": [
+    { "name": "MongoDB",       "iconKey": "mongodb",       "link": "https://www.mongodb.com/" },
+    { "name": "Elasticsearch", "iconKey": "elasticsearch", "link": "https://www.elastic.co/elasticsearch/" },
+    { "name": "MariaDB",       "iconKey": "mariadb",       "link": "https://mariadb.org/" },
+    { "name": "SQL",           "iconKey": "mysql",         "link": "https://www.mysql.com/" },
+    { "name": "OpenSearch",    "iconKey": "opensearch",    "link": "https://opensearch.org/" },
+    { "name": "Jest",          "iconKey": "jest",          "link": "https://jestjs.io/" },
+    { "name": "Cypress",       "iconKey": "cypress",       "link": "https://www.cypress.io/" }
+  ],
+  "DevOps, Cloud & CI/CD": [
+    { "name": "Docker",       "iconKey": "docker",      "link": "https://www.docker.com/" },
+    { "name": "Kubernetes",   "iconKey": "kubernetes",  "link": "https://kubernetes.io/" },
+    { "name": "Jenkins (CI/CD)", "iconKey": "jenkins",  "link": "https://www.jenkins.io/" },
+    { "name": "AWS",          "iconKey": "aws",         "link": "https://aws.amazon.com/" },
+    { "name": "Google Cloud", "iconKey": "googleCloud", "link": "https://cloud.google.com/" }
+  ],
+  "Version Control & Other Tech": [
+    { "name": "Git",    "iconKey": "git",    "link": "https://git-scm.com/" },
+    { "name": "GitHub", "iconKey": "github", "link": "https://github.com/" },
+    { "name": "NPM",    "iconKey": "npm",    "link": "https://www.npmjs.com/" },
+    { "name": "Yarn",   "iconKey": "yarn",   "link": "https://yarnpkg.com/" },
+    { "name": "Groovy", "iconKey": "groovy", "link": "https://groovy-lang.org/" },
+    { "name": "YAML",   "iconKey": "yml",    "link": "https://yaml.org/" }
+  ],
+  "Operating Systems": [
+    { "name": "Linux",   "iconKey": "linux",   "link": "https://www.linux.org/" },
+    { "name": "Windows", "iconKey": "windows", "link": "https://www.microsoft.com/windows/" },
+    { "name": "Mac",     "iconKey": "mac",     "link": "https://www.apple.com/macos/" }
+  ]
+}

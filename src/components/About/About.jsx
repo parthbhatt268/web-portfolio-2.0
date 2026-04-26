@@ -3,16 +3,9 @@ import React from "react";
 import "./About.css";
 
 import ProfileCard from "../Effects/ProfileCard/ProfileCard";
+import data from "./data.json";
 
 const About = () => {
-  const text =
-    "Hi 👋, my name is Parth and I am currently working at Siren as a Software Engineer. " +
-    "I have been working in the field of Software Engineering for almost 4.5 years now." +
-    "I achieved First Class Honours 🎖️ in my Master's Degree 🎓 in Information Systems Management (ISM) " +
-    "from the University of Galway 🏛. " +
-    "I have a passion for building software that makes sense in the real world, and now I am also working with AI and Machine Learning." +
-    "Thanks for taking your time to visit my page. 😁";
-
   return (
     <section id="about" className="about-container">
       <h2 className="about-title">About</h2>
@@ -22,22 +15,19 @@ const About = () => {
             showUserInfo={true}
             showBehindGradient={true}
             enableTilt={true}
-            name="Parth Bhatt"
-            title="Software Engineer"
-            handle="parthbhatt268"
-            status="Online"
-            contactText="Contact Me"
+            name={data.profile.name}
+            title={data.profile.title}
+            handle={data.profile.handle}
+            status={data.profile.status}
+            contactText={data.profile.contactText}
             onContactClick={() =>
-              window.open(
-                "https://www.linkedin.com/in/parth-bhatt-092024186/",
-                "_blank"
-              )
+              window.open(data.profile.linkedinUrl, "_blank")
             }
           />
         </div>
 
         <div className="about-text">
-          <p>{text}</p>
+          <p>{data.bio}</p>
         </div>
       </div>
     </section>

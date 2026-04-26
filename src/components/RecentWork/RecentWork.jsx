@@ -1,6 +1,7 @@
 import React from "react";
 import "./RecentWork.css";
 import consoleGif from "../../assets/images/console.gif";
+import data from "./data.json";
 
 const RecentWork = () => {
   return (
@@ -11,34 +12,26 @@ const RecentWork = () => {
         <div className="recent-work-content">
           <div className="recent-work-item">
             <div className="recent-work-text">
-              <h3 className="work-title">
-                A vscode extension - Console Log with Emoji
-              </h3>
-              <p className="work-description">
-                Hit Alt + P to insert console.log statements with a random emoji
-                and the filename.
-              </p>
+              <h3 className="work-title">{data.title}</h3>
+              <p className="work-description">{data.description}</p>
 
               <div className="work-details">
                 <div className="work-detail">
                   <span className="detail-label">Search on VScode</span>
-                  <span className="detail-value">
-                    {" "}
-                    - console-log-with-emoji
-                  </span>
+                  <span className="detail-value"> - {data.extensionName}</span>
                 </div>
                 <div className="work-detail">
                   <span className="detail-label">Downloads</span>
-                  <span className="detail-value"> - 22 installs</span>
+                  <span className="detail-value"> - {data.downloads}</span>
                 </div>
                 <div className="work-detail">
                   <span className="detail-label">Version</span>
-                  <span className="detail-value"> - 0.0.6</span>
+                  <span className="detail-value"> - {data.version}</span>
                 </div>
               </div>
               <div className="work-buttons">
                 <a
-                  href="https://marketplace.visualstudio.com/items?itemName=console-log-with-emoji.console-log-with-emoji"
+                  href={data.marketplaceLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="work-btn marketplace-btn"
@@ -46,7 +39,7 @@ const RecentWork = () => {
                   VS Code Marketplace →
                 </a>
                 <a
-                  href="https://github.com/parthbhatt268/console-log-with-emoji"
+                  href={data.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="work-btn github-btn"

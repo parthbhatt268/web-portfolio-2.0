@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "title": "Rapid Basket - A end to end Food Ordering Website",
+    "description": "",
+    "techStack": [
+      "React, Redux, Redux Toolkit Thunk",
+      "HTML, CSS, Javascript",
+      "ExpressJS and NodeJS REST API",
+      "MongoDb Database",
+      "Stripe Payment Integration",
+      "Amazon Web Service (AWS) Deployment"
+    ],
+    "imageKey": "rapidBasket",
+    "liveLink": "https://rapid-basket.netlify.app/",
+    "githubLink": "https://github.com/parthbhatt268/ui-rapidBasket"
+  },
+  {
+    "id": 2,
+    "title": "Fire Chat - A Web based group chatting application",
+    "description": "",
+    "techStack": [
+      "Frontend - React, Javascript, HTML, CSS",
+      "Auth - Google SSO",
+      "Database - Firebase"
+    ],
+    "imageKey": "chatApp",
+    "liveLink": "https://webchat-4d001.web.app/",
+    "githubLink": "https://github.com/parthbhatt268/Fire-Chat"
+  }
+]

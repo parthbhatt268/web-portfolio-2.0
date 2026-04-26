@@ -2,40 +2,14 @@ import React from "react";
 import "./Projects.css";
 import rapidBasketImage from "../../assets/images/rapis-basket.png";
 import chatAppImage from "../../assets/images/chat-app.png";
+import projectsData from "./data.json";
+
+const IMAGES = {
+  rapidBasket: rapidBasketImage,
+  chatApp: chatAppImage,
+};
 
 const Projects = () => {
-  const projectsData = [
-    {
-      id: 1,
-      title: "Rapid Basket - A end to end Food Ordering Website",
-      description: "",
-      techStack: [
-        "React, Redux, Redux Toolkit Thunk",
-        "HTML, CSS, Javascript",
-        "ExpressJS and NodeJS REST API",
-        "MongoDb Database",
-        "Stripe Payment Integration",
-        "Amazon Web Service (AWS) Deployment",
-      ],
-      image: rapidBasketImage,
-      liveLink: "https://rapid-basket.netlify.app/",
-      githubLink: "https://github.com/parthbhatt268/ui-rapidBasket",
-    },
-    {
-      id: 2,
-      title: "Fire Chat - A Web based group chatting application",
-      description: "",
-      techStack: [
-        "Frontend - React, Javascript, HTML, CSS",
-        "Auth - Google SSO",
-        "Database - Firebase",
-      ],
-      image: chatAppImage,
-      liveLink: "https://webchat-4d001.web.app/",
-      githubLink: "https://github.com/parthbhatt268/Fire-Chat",
-    },
-  ];
-
   return (
     <section className="projects-section" id="projects">
       <div className="projects-container">
@@ -84,7 +58,7 @@ const Projects = () => {
               </div>
 
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <img src={IMAGES[project.imageKey]} alt={project.title} />
               </div>
             </div>
           ))}

@@ -2,40 +2,14 @@ import React from "react";
 import "./WorkExperience.css";
 import sirenImage from "../../assets/images/SirenPhoto.jpg";
 import jioImage from "../../assets/images/jio.jpg";
+import workExperienceData from "./data.json";
+
+const IMAGES = {
+  siren: sirenImage,
+  jio: jioImage,
+};
 
 function WorkExperience() {
-  const workExperienceData = [
-    {
-      id: 1,
-      position: "Software Developer Engineer",
-      company: "Siren",
-      duration: "Jan 2024 - Present",
-      coreTech: [
-        "Frontend - React, Angular, JavaScript, TypeScript, HTML, CSS",
-        "Backend - Node, Express",
-        "Database - ElasticSearch, OpenSearch, MongoDB",
-        "Testing - Jest, Cypress, Mocha, Karma",
-        "CI/CD - Jenkins, Docker, k8s, Pipeline automation, GitHub Actions",
-        "Cloud - AWS Cloud Services, Google Cloud Platform",
-      ],
-      image: sirenImage,
-      visitLink: "https://siren.io/",
-    },
-    {
-      id: 2,
-      position: "Senior Software Developer Engineer",
-      company: "Reliance Jio",
-      duration: "Nov 2020 - July 2023",
-      coreTech: [
-        "React, Javascript, Redux, Reduc-toolkit, Thunk",
-        "Microservices Architecture",
-        "Redis, MySQL & PostgreSQL Database",
-      ],
-      image: jioImage,
-      visitLink: "https://www.jio.com/",
-    },
-  ];
-
   return (
     <section className="work-experience-section" id="work-experience">
       <div className="work-experience-container">
@@ -81,7 +55,7 @@ function WorkExperience() {
               </div>
 
               <div className="work-experience-image">
-                <img src={work.image} alt={work.company} />
+                <img src={IMAGES[work.imageKey]} alt={work.company} />
               </div>
             </div>
           ))}

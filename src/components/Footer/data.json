@@ -1,0 +1,12 @@
+{
+  "connectText": "Check out my work on below platforms",
+  "copyright": "©2026 Parth Bhatt | All Rights Reserved",
+  "madeWith": "Made with ❤️ in Galway, Ireland",
+  "socialLinks": [
+    { "platform": "LinkedIn",   "imageKey": "linkedin",   "url": "https://www.linkedin.com/in/parth-bhatt-092024186/" },
+    { "platform": "GitHub",     "imageKey": "github",     "url": "https://github.com/parthbhatt268" },
+    { "platform": "LeetCode",   "imageKey": "leetcode",   "url": "https://leetcode.com/u/Parth_Bhatt/" },
+    { "platform": "HackerRank", "imageKey": "hackerrank", "url": "https://www.hackerrank.com/profile/parthbhatt_268" },
+    { "platform": "Coursera",   "imageKey": "coursera",   "url": "https://www.coursera.org/user/44ed270aca8e5b9b23aed34522b3d0d9" }
+  ]
+}

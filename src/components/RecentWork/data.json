@@ -1,0 +1,9 @@
+{
+  "title": "A vscode extension - Console Log with Emoji",
+  "description": "Hit Alt + P to insert console.log statements with a random emoji and the filename.",
+  "extensionName": "console-log-with-emoji",
+  "downloads": "22 installs",
+  "version": "0.0.6",
+  "marketplaceLink": "https://marketplace.visualstudio.com/items?itemName=console-log-with-emoji.console-log-with-emoji",
+  "githubLink": "https://github.com/parthbhatt268/console-log-with-emoji"
+}

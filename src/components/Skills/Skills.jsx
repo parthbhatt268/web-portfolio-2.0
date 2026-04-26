@@ -1,5 +1,6 @@
 import React from "react";
 import "./Skills.css";
+import data from "./data.json";
 
 // Frontend
 import htmlLogo from "../../assets/logo/html.png";
@@ -24,7 +25,7 @@ import openaiLogo from "../../assets/logo/openai.png";
 
 // Databases & Test
 import mongodbLogo from "../../assets/logo/mongo.png";
-import mariadbLogo from "../../assets/logo/psql.png"; // Using PostgreSQL icon as placeholder
+import mariadbLogo from "../../assets/logo/psql.png";
 import mysqlLogo from "../../assets/logo/sql.svg";
 import elasticsearchLogo from "../../assets/logo/elasticsearch.svg";
 import opensearchLogo from "../../assets/logo/opensearch.png";
@@ -45,134 +46,67 @@ import npmLogo from "../../assets/logo/npm.png";
 import yarnLogo from "../../assets/logo/yarn.png";
 import groovyLogo from "../../assets/logo/groovy.png";
 import ymlLogo from "../../assets/logo/yml.png";
+
 // Operating Systems
 import linuxLogo from "../../assets/logo/linux.png";
 import windowsLogo from "../../assets/logo/windows.png";
 import macLogo from "../../assets/logo/mac.png";
 
-export default function Skills() {
-  const LOGO = {
-    Frontend: [
-      {
-        name: "HTML",
-        icon: htmlLogo,
-        link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-      },
-      {
-        name: "CSS",
-        icon: cssLogo,
-        link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-      },
-      {
-        name: "JavaScript",
-        icon: jsLogo,
-        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-      },
-      { name: "React", icon: reactLogo, link: "https://reactjs.org/" },
-      { name: "Next.js", icon: nextLogo, link: "https://nextjs.org/" },
-      { name: "AngularJS", icon: angularLogo, link: "https://angular.io/" },
-      {
-        name: "Redux Toolkit",
-        icon: reduxLogo,
-        link: "https://redux-toolkit.js.org/",
-      },
-      { name: "Material UI", icon: materialUILogo, link: "https://mui.com/" },
-      {
-        name: "Bootstrap",
-        icon: bootstrapLogo,
-        link: "https://getbootstrap.com/",
-      },
-    ],
-    "Backend & APIs": [
-      { name: "Node.js", icon: nodeLogo, link: "https://nodejs.org/" },
-      { name: "Express.js", icon: expressLogo, link: "https://expressjs.com/" },
-      { name: "REST API", icon: restLogo, link: "https://restfulapi.net/" },
-      { name: "GraphQL", icon: graphqlLogo, link: "https://graphql.org/" },
-      { name: "JWT", icon: jwtLogo, link: "https://jwt.io/" },
-      {
-        name: "Firebase",
-        icon: firebaseLogo,
-        link: "https://firebase.google.com/",
-      },
-      {
-        name: "Stripe Payments",
-        icon: stripeLogo,
-        link: "https://stripe.com/",
-      },
-      {
-        name: "OpenAI LLM (API)",
-        icon: openaiLogo,
-        link: "https://openai.com/api/",
-      },
-    ],
-    "Databases & Test": [
-      { name: "MongoDB", icon: mongodbLogo, link: "https://www.mongodb.com/" },
-      {
-        name: "Elasticsearch",
-        icon: elasticsearchLogo,
-        link: "https://www.elastic.co/elasticsearch/",
-      },
-      { name: "MariaDB", icon: mariadbLogo, link: "https://mariadb.org/" },
-      { name: "SQL", icon: mysqlLogo, link: "https://www.mysql.com/" },
-      {
-        name: "OpenSearch",
-        icon: opensearchLogo,
-        link: "https://opensearch.org/",
-      },
-      { name: "Jest", icon: jestLogo, link: "https://jestjs.io/" },
-      { name: "Cypress", icon: cypressLogo, link: "https://www.cypress.io/" },
-    ],
-    "DevOps, Cloud & CI/CD": [
-      { name: "Docker", icon: dockerLogo, link: "https://www.docker.com/" },
-      {
-        name: "Kubernetes",
-        icon: kubernetesLogo,
-        link: "https://kubernetes.io/",
-      },
-      {
-        name: "Jenkins (CI/CD)",
-        icon: jenkinsLogo,
-        link: "https://www.jenkins.io/",
-      },
-      { name: "AWS", icon: awsLogo, link: "https://aws.amazon.com/" },
-      {
-        name: "Google Cloud",
-        icon: googleCloudLogo,
-        link: "https://cloud.google.com/",
-      },
-    ],
-    "Version Control & Other Tech": [
-      { name: "Git", icon: gitLogo, link: "https://git-scm.com/" },
-      { name: "GitHub", icon: githubLogo, link: "https://github.com/" },
-      { name: "NPM", icon: npmLogo, link: "https://www.npmjs.com/" },
-      { name: "Yarn", icon: yarnLogo, link: "https://yarnpkg.com/" },
-      { name: "Groovy", icon: groovyLogo, link: "https://groovy-lang.org/" },
-      { name: "YAML", icon: ymlLogo, link: "https://yaml.org/" },
-    ],
-    "Operating Systems": [
-      { name: "Linux", icon: linuxLogo, link: "https://www.linux.org/" },
-      {
-        name: "Windows",
-        icon: windowsLogo,
-        link: "https://www.microsoft.com/windows/",
-      },
-      { name: "Mac", icon: macLogo, link: "https://www.apple.com/macos/" },
-    ],
-  };
+const ICONS = {
+  html: htmlLogo,
+  css: cssLogo,
+  js: jsLogo,
+  react: reactLogo,
+  next: nextLogo,
+  angular: angularLogo,
+  redux: reduxLogo,
+  materialUI: materialUILogo,
+  bootstrap: bootstrapLogo,
+  node: nodeLogo,
+  express: expressLogo,
+  rest: restLogo,
+  graphql: graphqlLogo,
+  jwt: jwtLogo,
+  firebase: firebaseLogo,
+  stripe: stripeLogo,
+  openai: openaiLogo,
+  mongodb: mongodbLogo,
+  mariadb: mariadbLogo,
+  mysql: mysqlLogo,
+  elasticsearch: elasticsearchLogo,
+  opensearch: opensearchLogo,
+  jest: jestLogo,
+  cypress: cypressLogo,
+  docker: dockerLogo,
+  kubernetes: kubernetesLogo,
+  jenkins: jenkinsLogo,
+  aws: awsLogo,
+  googleCloud: googleCloudLogo,
+  git: gitLogo,
+  github: githubLogo,
+  npm: npmLogo,
+  yarn: yarnLogo,
+  groovy: groovyLogo,
+  yml: ymlLogo,
+  linux: linuxLogo,
+  windows: windowsLogo,
+  mac: macLogo,
+};
 
+export default function Skills() {
   return (
     <section id="skills" className="skills-section">
       <div className="skills-container">
         <h2 className="skills-title">Tech Stack</h2>
 
         <div className="skills-groups">
-          {Object.entries(LOGO).map(([category, items]) => (
+          {Object.entries(data).map(([category, items]) => (
             <div key={category} className="skills-group">
               <div className="skills-category">
                 <p>{category}</p>
               </div>
               <div className="skills-items">
-                {items.map(({ name, icon, link }) => (
+                {items.map(({ name, iconKey, link }) => (
                   <a
                     key={name}
                     href={link}
@@ -180,7 +114,7 @@ export default function Skills() {
                     rel="noopener noreferrer"
                     className="skill-card"
                   >
-                    <img src={icon} alt={name} className="skill-icon" />
+                    <img src={ICONS[iconKey]} alt={name} className="skill-icon" />
                     <span className="skill-label">{name}</span>
                   </a>
                 ))}

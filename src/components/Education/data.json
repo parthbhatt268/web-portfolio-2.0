@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "degree": "Masters of science",
+    "university": "University of Galway, Ireland",
+    "course": "Information System Management",
+    "duration": "Sept 2023 - May 2024",
+    "score": "Aimed to get 1H (First Class Honours)",
+    "coreSubjects": [
+      "Web Development",
+      "C#(C Sharp)Programming",
+      "Database Management",
+      "Machine Learning and Modelling",
+      "Cloud Computing"
+    ],
+    "imageKey": "master",
+    "visitLink": "https://www.universityofgalway.ie/"
+  },
+  {
+    "id": 2,
+    "degree": "Bachelor of Engineering",
+    "university": "Mumbai University, India",
+    "course": "",
+    "duration": "August 2016 - August 2020",
+    "score": "8.61/10 (First Class Honours)",
+    "coreSubjects": [
+      "Object Oriented Programming",
+      "Java Programming",
+      "Database Management",
+      "C/C++ Programming",
+      "Network Security",
+      "Data Encryption"
+    ],
+    "imageKey": "bachelor",
+    "visitLink": "https://mu.ac.in/"
+  }
+]

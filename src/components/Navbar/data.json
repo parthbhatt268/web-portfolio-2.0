@@ -1,0 +1,9 @@
+{
+  "brand": "Parth Bhatt",
+  "navLinks": [
+    { "id": "work-experience", "label": "Work" },
+    { "id": "projects", "label": "Projects" },
+    { "id": "skills", "label": "Skills" },
+    { "id": "about", "label": "About" }
+  ]
+}
