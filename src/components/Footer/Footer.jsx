@@ -1,80 +1,22 @@
-import React from "react";
-import "./Footer.css";
-import linkedin from "../../assets/images/linkedin.png";
-import github from "../../assets/images/github.png";
-import leetcode from "../../assets/images/LeetCode.png";
-import hackerrank from "../../assets/images/hackerrank.svg";
-import coursera from "../../assets/images/Coursera.png";
-import data from "./data.json";
+import React from 'react';
+import { PaperPlane } from '../OrigamiWorld/PaperShapes';
+import data from '../../data.json';
+import './Footer.css';
 
-const IMAGES = {
-  linkedin,
-  github,
-  leetcode,
-  hackerrank,
-  coursera,
-};
-
-const Footer = () => {
-  const [showTopBtn, setShowTopBtn] = React.useState(false);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const homeSection = document.getElementById("home");
-      if (homeSection) {
-        const rect = homeSection.getBoundingClientRect();
-        setShowTopBtn(rect.bottom < 0);
-      } else {
-        setShowTopBtn(window.scrollY > 100);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+export default function Footer() {
+  const { handle, linkedIn } = data.about;
+  const githubUrl = `https://github.com/${handle}`;
 
   return (
-    <footer className="footer">
-      <div className="waves">
-        <div className="wave" id="wave1"></div>
-        <div className="wave" id="wave2"></div>
-        <div className="wave" id="wave3"></div>
-        <div className="wave" id="wave4"></div>
+    <footer id="contact" className="section footer">
+      <PaperPlane className="footer__plane" width="70" height="42" style={{ color: 'var(--accent)' }} />
+      <h2>Let's fold something together.</h2>
+      <p>Have a project in mind, or just want to say hi? My inbox is always open.</p>
+      <div className="footer__cta">
+        <a className="btn btn-primary" href={linkedIn} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a className="btn btn-ghost" href={githubUrl} target="_blank" rel="noreferrer">GitHub ↗</a>
       </div>
-      <h3 className="footer-connect-text">{data.connectText}</h3>
-      <ul className="social-icon">
-        {data.socialLinks.map((social) => (
-          <li key={social.platform} className="social-icon__item">
-            <div className="glass-social-icon">
-              <a
-                className="social-icon__link"
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={IMAGES[social.imageKey]} alt={social.platform} />
-              </a>
-            </div>
-          </li>
-        ))}
-      </ul>
-
-      <p>{data.copyright}</p>
-      <div className="footer-made-with">{data.madeWith}</div>
-      {showTopBtn && (
-        <button
-          className="back-to-top"
-          onClick={scrollToTop}
-          aria-label="Back to top"
-        >
-          ↑
-        </button>
-      )}
+      <p className="footer__copy mono">© {new Date().getFullYear()} {data.about.name} · Built with paper &amp; pixels</p>
     </footer>
   );
-};
-
-export default Footer;
+}

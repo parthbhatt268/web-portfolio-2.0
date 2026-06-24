@@ -1,65 +1,88 @@
-import React from "react";
-import "../Effects/RotatingText/RotatingText.css";
-import "./Home.css";
-import RotatingText from "../Effects/RotatingText/RotatingText";
-import desktopBg from "../../assets/images/desktop-bg-half.png";
-import profileImage from "../../assets/images/mobile-bg.png";
-import data from "./data.json";
+import React from 'react';
+import RotatingText from '../Effects/RotatingText/RotatingText';
+import data from '../../data.json';
+import './Home.css';
 
-const Home = () => {
-  const handleConnectClick = () => {
-    window.open(data.linkedinUrl, "_blank");
-  };
+function PaperCrane() {
+  const facets = [
+    { points: '100,30 140,90 100,150 100,90', delay: 0 },
+    { points: '100,30 60,90 100,150 100,90', delay: 0.08, shade: true },
+    { points: '100,150 140,90 175,150 130,185', delay: 0.16 },
+    { points: '100,150 60,90 25,150 70,185', delay: 0.24, shade: true },
+    { points: '100,30 90,4 110,4', delay: 0.32 },
+    { points: '70,185 100,150 130,185 100,220', delay: 0.4, shade: true },
+  ];
+  return (
+    <svg className="crane" viewBox="0 0 200 230" width="180" height="200">
+      {facets.map((f, i) => (
+        <polygon
+          key={i}
+          points={f.points}
+          className="crane-facet"
+          style={{ animationDelay: `${f.delay}s`, fill: f.shade ? 'var(--accent)' : 'var(--surface)' }}
+        />
+      ))}
+      <line x1="100" y1="30" x2="100" y2="150" className="crane-fold" />
+    </svg>
+  );
+}
+
+export default function Home() {
+  const { greeting, roles, linkedIn } = data.home;
+  const [before, after] = data.home.subtitle.split('{role}');
 
   return (
-    <div className="hero" role="img" aria-label="Background image of …">
-      {/* background image layer */}
-      <img src={desktopBg} alt="" className="hero__img" />
-
-      {/* your intro text with inline rotating roles */}
-      <div className="hero__content">
-        <h1>{data.greeting}</h1>
-        <p className="hero__subtitle">
-          an Experienced{" "}
-          <RotatingText
-            texts={data.roles}
-            mainClassName="rotating-text-inline"
-            splitLevelClassName="rotating-text-split"
-            staggerFrom="last"
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-120%" }}
-            staggerDuration={0.025}
-            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            rotationInterval={2000}
-          />{" "}
-          Engineer, <br />
-          {data.location}
-        </p>
-
-        {/* Profile Card */}
-        <div className="profile-card">
-          <div className="profile-image">
-            <img src={profileImage} alt="Parth Bhatt" />
-          </div>
-        </div>
-
-        {/* Connect with me button */}
-        <button className="connect-button" onClick={handleConnectClick}>
-          <svg
-            className="linkedin-icon"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-          </svg>
-          <span>{data.connectButtonText}</span>
-        </button>
+    <section id="home" className="hero">
+      <div className="hero__crane">
+        <PaperCrane />
       </div>
-    </div>
-  );
-};
 
-export default Home;
+      <div className="hero__status">
+        <span className="hero__dot" />
+        {data.about.status} · Galway, Ireland
+      </div>
+
+      <h1 className="hero__headline">{greeting}</h1>
+
+      <p className="hero__subline">
+        {before}
+        <RotatingText
+          texts={roles}
+          mainClassName="hero__role"
+          splitLevelClassName="hero__role-split"
+          staggerFrom="last"
+          initial={{ y: '100%' }}
+          animate={{ y: 0 }}
+          exit={{ y: '-120%' }}
+          staggerDuration={0.025}
+          transition={{ type: 'spring', damping: 30, stiffness: 400 }}
+          rotationInterval={2200}
+        />
+        {after}
+      </p>
+
+      <div className="hero__cta">
+        <a className="btn btn-primary" href={linkedIn} target="_blank" rel="noreferrer">
+          Connect on LinkedIn
+        </a>
+        <a
+          className="btn btn-ghost"
+          href="#projects"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
+          View my work
+        </a>
+      </div>
+
+      <div className="hero__scroll">
+        <span>Scroll</span>
+        <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
+          <path d="M7 1v16M1 11l6 6 6-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+    </section>
+  );
+}

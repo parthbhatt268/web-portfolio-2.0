@@ -1,110 +1,21 @@
-/* Skills.css */
-.skills-section {
-  padding: 80px 0 90px 0;
-}
-
-.skills-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.skills-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #fff;
-  text-align: left;
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-.skills-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background-color: #ff0000;
-}
-
-.skills-groups {
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
-}
-
-.skills-group {
+.skills__grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
 }
 
-/* On screens 640px and up, switch to 5:7 columns */
-@media (min-width: 640px) {
-  .skills-group {
-    grid-template-columns: 5fr 7fr;
-    align-items: center;
-  }
+.skills__card {
+  padding: 26px 24px;
 }
 
-.skills-category p {
-  font-size: 1.5rem;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #fff;
-  margin: 0;
+.skills__card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 16px;
 }
 
-.skills-items {
+.skills__pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 18px;
-}
-
-.skill-card {
-  display: flex;
-  align-items: center;
   gap: 8px;
-  padding: 6px 10px;
-  border: 1.5px solid #3d3d3d;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-.skill-card:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
-  transform: translateY(-2px);
-  border-color: #555;
-}
-
-.skill-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
-
-.skill-label {
-  font-size: 14px;
-  text-transform: capitalize;
-  color: #fff;
-  white-space: nowrap;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .skills-title {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .skills-title::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }

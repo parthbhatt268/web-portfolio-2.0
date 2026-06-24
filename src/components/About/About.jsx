@@ -1,37 +1,35 @@
-// src/components/About/About.jsx
-import React from "react";
-import "./About.css";
+import React from 'react';
+import headshot from '../../assets/images/Parth.jpeg';
+import data from '../../data.json';
+import './About.css';
 
-import ProfileCard from "../Effects/ProfileCard/ProfileCard";
-import data from "./data.json";
+export default function About() {
+  const { name, handle, linkedIn, bio } = data.about;
 
-const About = () => {
   return (
-    <section id="about" className="about-container">
-      <h2 className="about-title">About</h2>
-      <div className="about-content">
-        <div className="about-profile">
-          <ProfileCard
-            showUserInfo={true}
-            showBehindGradient={true}
-            enableTilt={true}
-            name={data.profile.name}
-            title={data.profile.title}
-            handle={data.profile.handle}
-            status={data.profile.status}
-            contactText={data.profile.contactText}
-            onContactClick={() =>
-              window.open(data.profile.linkedinUrl, "_blank")
-            }
-          />
+    <section id="about" className="section about">
+      <div className="section-head">
+        <span className="section-num mono">01 / about</span>
+        <span className="section-rule" />
+      </div>
+
+      <div className="about__grid">
+        <div className="about__text">
+          <h2>About me</h2>
+          <p className="about__bio">{bio}</p>
+          <div className="about__meta">
+            <span className="mono">@{handle}</span>
+            <a href={linkedIn} target="_blank" rel="noreferrer" className="pill">
+              LinkedIn ↗
+            </a>
+          </div>
         </div>
 
-        <div className="about-text">
-          <p>{data.bio}</p>
+        <div className="about__portrait card">
+          <img src={headshot} alt={`${name} headshot`} loading="lazy" />
+          <span className="about__tag pill">📍 Galway, IE</span>
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}

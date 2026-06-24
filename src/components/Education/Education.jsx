@@ -1,75 +1,41 @@
 import React from 'react';
-import './Education.css';
 import masterUniversity from '../../assets/images/Master_University.jpeg';
 import bachelorUniversity from '../../assets/images/Bachelor_University.jpg';
-import educationData from './data.json';
+import data from '../../data.json';
+import './Education.css';
 
-const IMAGES = {
-  master: masterUniversity,
-  bachelor: bachelorUniversity,
-};
+const IMAGES = { 1: masterUniversity, 2: bachelorUniversity };
 
-const Education = () => {
+export default function Education() {
   return (
-    <section className="education-section" id="education">
-      <div className="education-container">
-        <h2 className="education-title">Education</h2>
+    <section id="education" className="section">
+      <div className="section-head">
+        <span className="section-num mono">03 / education</span>
+        <span className="section-rule" />
+      </div>
+      <h2>Education</h2>
 
-        <div className="education-content">
-          {educationData.map((edu) => (
-            <div key={edu.id} className="education-item">
-              <div className="education-text">
-                <h3 className="education-degree">
-                  {edu.degree} - {edu.university}
-                </h3>
-                {edu.course && (
-                  <p className="education-course">
-                    Course - {edu.course}
-                  </p>
-                )}
-
-                <div className="education-details">
-                  <div className="education-detail">
-                    <span className="detail-label">Duration</span>
-                    <span className="detail-value"> - {edu.duration}</span>
-                  </div>
-                  <div className="education-detail">
-                    <span className="detail-label">Score</span>
-                    <span className="detail-value"> - {edu.score}</span>
-                  </div>
-                  <div className="education-detail">
-                    <span className="detail-label">Core subjects</span>
-                    <span className="detail-value"> -</span>
-                  </div>
-                </div>
-
-                <ol className="core-subjects-list">
-                  {edu.coreSubjects.map((subject, index) => (
-                    <li key={index} className="core-subject-item">
-                      {subject}
-                    </li>
-                  ))}
-                </ol>
-
-                <a
-                  href={edu.visitLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="visit-university-btn"
-                >
-                  Visit University Site →
-                </a>
+      <div className="education__grid">
+        {data.education.map((edu) => (
+          <div key={edu.id} className="education__card card">
+            <img className="education__img" src={IMAGES[edu.id]} alt={edu.university} loading="lazy" />
+            <div className="education__body">
+              <h3>{edu.degree}</h3>
+              <p className="education__university">{edu.university}</p>
+              {edu.course && <p className="education__course">{edu.course}</p>}
+              <span className="pill education__badge">{edu.score}</span>
+              <div className="education__subjects">
+                {edu.coreSubjects.map((s) => (
+                  <span key={s} className="pill">{s}</span>
+                ))}
               </div>
-
-              <div className="education-image">
-                <img src={IMAGES[edu.imageKey]} alt={edu.university} />
-              </div>
+              <a className="education__link" href={edu.visitLink} target="_blank" rel="noreferrer">
+                Visit ↗
+              </a>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
-};
-
-export default Education;
+}

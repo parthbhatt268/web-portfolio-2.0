@@ -1,237 +1,56 @@
-.work-experience-section {
-  min-height: 100vh;
-  padding: 4rem 2rem;
+.experience__list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background: #000;
-  color: #fff;
+  gap: 28px;
+  margin-top: 40px;
 }
 
-.work-experience-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.work-experience-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #fff;
-  text-align: left;
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-.work-experience-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background-color: #ff0000;
-}
-
-.work-experience-content {
+.experience__card {
   display: flex;
-  flex-direction: column;
-  gap: 4rem;
+  gap: 28px;
+  padding: 32px;
+  align-items: flex-start;
 }
 
-.work-experience-item {
-  display: grid;
-  grid-template-columns: 1fr 450px;
-  gap: 3rem;
-  align-items: start;
-  padding: 2rem 0;
-}
-
-.work-experience-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.work-experience-position {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #fff;
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
-}
-
-.work-experience-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.work-experience-detail {
-  display: flex;
-  align-items: center;
-  font-size: 0.95rem;
-}
-
-.detail-label {
-  font-weight: 600;
-  color: #fff;
-  min-width: 80px;
-}
-
-.detail-value {
-  color: #ccc;
-}
-
-.core-tech-list {
-  list-style: decimal;
-  padding-left: 1.5rem;
-  margin: 0.5rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.core-tech-item {
-  font-size: 0.95rem;
-  color: #ccc;
-  line-height: 1.4;
-}
-
-.visit-company-btn {
-  display: inline-block;
-  background-color: #12008a;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  align-self: flex-start;
-  margin-top: 1rem;
-}
-
-.visit-company-btn:hover {
-  background-color: #0f0070;
-  transform: translateY(-2px);
-}
-
-.work-experience-image {
-  width: 108%;
-  height: 300px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.work-experience-image img {
-  width: 100%;
-  height: 100%;
+.experience__logo {
+  width: 64px;
+  height: 64px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  border-radius: 14px;
+  flex-shrink: 0;
 }
 
-.work-experience-image:hover img {
-  transform: scale(1.05);
+.experience__duration {
+  color: var(--faint);
+  font-size: 0.8rem;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .work-experience-section {
-    padding: 2rem 1rem;
-  }
-
-  .work-experience-title {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .work-experience-title::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .work-experience-content {
-    gap: 2.5rem;
-  }
-
-  .work-experience-item {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    text-align: left;
-  }
-
-  .work-experience-item:nth-child(even) {
-    grid-template-columns: 1fr;
-  }
-
-  .work-experience-text {
-    order: 2;
-  }
-
-  .work-experience-image {
-    order: 1;
-  }
-
-  .work-experience-position {
-    font-size: 1.5rem;
-  }
-
-  .work-experience-image {
-    height: 250px;
-    margin: 0 auto;
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .visit-company-btn {
-    align-self: center;
-    width: fit-content;
-  }
-
-  .core-tech-list {
-    padding-left: 1.2rem;
-  }
+.experience__body h3 {
+  margin: 6px 0 2px;
+  font-size: 1.25rem;
 }
 
-@media (max-width: 480px) {
-  .work-experience-section {
-    padding: 1.5rem 0.8rem;
-  }
+.experience__company {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
 
-  .work-experience-title {
-    font-size: 1.8rem;
-  }
+.experience__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
 
-  .work-experience-position {
-    font-size: 1.3rem;
-  }
+.experience__link {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
 
-  .work-experience-image {
-    height: 220px;
-  }
-
-  .work-experience-details {
-    gap: 0.3rem;
-  }
-
-  .work-experience-detail {
-    font-size: 0.9rem;
-  }
-
-  .core-tech-item {
-    font-size: 0.9rem;
-  }
-
-  .visit-company-btn {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.85rem;
+@media (max-width: 640px) {
+  .experience__card {
+    flex-direction: column;
   }
 }

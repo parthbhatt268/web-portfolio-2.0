@@ -1,73 +1,45 @@
-import React from "react";
-import "./Projects.css";
-import rapidBasketImage from "../../assets/images/rapis-basket.png";
-import chatAppImage from "../../assets/images/chat-app.png";
-import brainStackImage from "../../assets/images/brain-stack-1.png";
-import projectsData from "./data.json";
+import React from 'react';
+import rapidBasketImage from '../../assets/images/rapis-basket.png';
+import chatAppImage from '../../assets/images/chat-app.png';
+import data from '../../data.json';
+import './Projects.css';
 
-const IMAGES = {
-  brainStack: brainStackImage,
-  rapidBasket: rapidBasketImage,
-  chatApp: chatAppImage,
-};
+const IMAGES = { 1: rapidBasketImage, 2: chatAppImage };
 
-const Projects = () => {
+function techPills(techStack) {
+  return techStack.flatMap((line) =>
+    line.includes(' - ') ? line.split(' - ')[1].split(',').map((t) => t.trim()) : line.split(',').map((t) => t.trim())
+  );
+}
+
+export default function Projects() {
   return (
-    <section className="projects-section" id="projects">
-      <div className="projects-container">
-        <h2 className="projects-title">Projects</h2>
+    <section id="projects" className="section">
+      <div className="section-head">
+        <span className="section-num mono">05 / projects</span>
+        <span className="section-rule" />
+      </div>
+      <h2>Projects</h2>
 
-        <div className="projects-content">
-          {projectsData.map((project) => (
-            <div key={project.id} className="project-item">
-              <div className="project-text">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-
-                <div className="project-details">
-                  <div className="project-detail">
-                    <span className="detail-label">Tech Stack</span>
-                    <span className="detail-value"> -</span>
-                  </div>
-                </div>
-
-                <ol className="tech-stack-list">
-                  {project.techStack.map((tech, index) => (
-                    <li key={index} className="tech-stack-item">
-                      {tech}
-                    </li>
-                  ))}
-                </ol>
-
-                <div className="project-buttons">
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-btn live-btn"
-                  >
-                    Live Website →
-                  </a>
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-btn github-btn"
-                  >
-                    GitHub Repo →
-                  </a>
-                </div>
+      <div className="projects__grid">
+        {data.projects.map((project) => (
+          <div key={project.id} className="projects__card card">
+            <img className="projects__img" src={IMAGES[project.id]} alt={project.title} loading="lazy" />
+            <div className="projects__body">
+              <h3>{project.title}</h3>
+              <div className="projects__tags">
+                {techPills(project.techStack).map((tag) => (
+                  <span key={tag} className="pill">{tag}</span>
+                ))}
               </div>
-
-              <div className="project-image">
-                <img src={IMAGES[project.imageKey]} alt={project.title} />
+              <div className="projects__links">
+                <a href={project.liveLink} target="_blank" rel="noreferrer">Live demo ↗</a>
+                <a href={project.githubLink} target="_blank" rel="noreferrer">GitHub ↗</a>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
-};
-
-export default Projects;
+}

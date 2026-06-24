@@ -1,406 +1,116 @@
-/* Home.css */
-
-/* 0. Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
-/* 1. Theme color variable */
-:root {
-  --theme-color: #5227ff;
-}
-
-/* 2. Hero wrapper — full viewport */
 .hero {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  font-family: 'Roboto', sans-serif;
-}
-
-/* 3. Base image layer */
-.hero__img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   z-index: 1;
-}
-
-/* 4. Gradient overlay */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right,
-      rgba(0, 0, 0, 0.89) 0%,
-      rgba(0, 0, 0, 0.815) 45%,
-      rgba(0, 0, 0, 0.3) 80%,
-      rgba(0, 0, 0, 0) 100%);
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* 5. Left-aligned intro content */
-.hero__content {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
-  color: #fff;
-  text-align: left;
-  z-index: 3;
-  max-width: 600px;
-  font-family: 'Roboto', sans-serif;
-}
-
-/* 6. Main title */
-.hero__content h1 {
-  margin: 0 0 0.5rem;
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  line-height: 1.1;
-  font-weight: 700;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-}
-
-/* 7. Subtitle paragraph */
-.hero__subtitle {
-  margin: 0;
-  font-size: clamp(1.25rem, 4vw, 1.75rem);
-  line-height: 1.3;
-  font-weight: 400;
-  font-family: 'Roboto', sans-serif;
-}
-
-/* 8. Inline rotating-text overrides with glass effect */
-.rotating-text-inline {
-  display: inline-block;
-  color: #fff;
-  /* Frosted-glass overlay */
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  font-weight: 600;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  overflow: hidden;
-  vertical-align: middle;
-  font-family: 'Roboto', sans-serif;
-}
-
-/* 9. Split-level container (each letter/word) */
-.rotating-text-split {
-  display: inline-block;
-  overflow: hidden;
-}
-
-/* 10. Connect with me button */
-.connect-button {
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
-  padding: 12px 24px;
-  color: white;
-  font-weight: 500;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-  font-family: 'Roboto', sans-serif;
-}
-
-.connect-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-  border-radius: 50px;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.connect-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.connect-button:active {
-  transform: translateY(0);
-}
-
-.linkedin-icon {
-  color: #0077b5;
-  flex-shrink: 0;
-}
-
-/* 11. Mobile-specific improvements */
-@media (max-width: 768px) {
-  .hero__content {
-    left: 20px;
-    right: 20px;
-    max-width: none;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 80px;
-    /* Room for navbar */
-  }
-
-  .hero__content h1 {
-    font-size: clamp(2.5rem, 8vw, 3rem);
-    margin-bottom: 1rem;
-    margin-left: 20px;
-  }
-
-  .hero__subtitle {
-    font-size: clamp(1.4rem, 5vw, 1.6rem);
-    line-height: 1.4;
-    margin-bottom: 2rem;
-    margin-left: 20px;
-  }
-
-  .rotating-text-inline {
-    padding: 0.3rem 0.6rem;
-    font-size: 1.1em;
-  }
-
-  .profile-card {
-    display: flex;
-    margin-bottom: 2rem;
-    width: 70vw;
-    max-width: 300px;
-    padding: 24px;
-  }
-
-  .connect-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 24px;
-    font-size: 15px;
-    gap: 10px;
-    margin-top: 0;
-    width: fit-content;
-    margin-left: 20px;
-  }
-
-  .linkedin-icon {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero__content {
-    left: 50%;
-    right: auto;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding-top: 70px;
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-  }
-
-  .hero__content h1 {
-    font-size: clamp(2.2rem, 7vw, 2.8rem);
-    margin-bottom: 1.2rem;
-    margin-left: 0;
-  }
-
-  .hero__subtitle {
-    font-size: clamp(1.2rem, 4.5vw, 1.4rem);
-    line-height: 1.5;
-    margin-bottom: 1.8rem;
-    margin-left: 0;
-  }
-
-  .rotating-text-inline {
-    padding: 0.25rem 0.5rem;
-    font-size: 1em;
-  }
-
-  .profile-card {
-    margin-bottom: 1.5rem;
-    padding: 20px;
-    width: 70vw;
-    max-width: 280px;
-    margin: 10px auto;
-  }
-
-  .profile-image img {
-    width: 275px;
-    height: 270px;
-  }
-
-  .connect-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 24px;
-    font-size: 15px;
-    gap: 10px;
-    margin: 10px auto 0;
-    width: fit-content;
-    min-width: 200px;
-  }
-
-  .linkedin-icon {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-  }
-}
-
-/* 12. Profile Card */
-.profile-card {
-  display: none;
-  /* Hidden by default, only shown on mobile */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-  width: 70vw;
-  max-width: 300px;
+  text-align: center;
+  padding: 140px 24px 80px;
+  gap: 20px;
 }
 
-.profile-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-  border-radius: 16px;
-  pointer-events: none;
-  z-index: -1;
+.hero__crane {
+  margin-bottom: 4px;
 }
 
-.profile-image {
-  flex-shrink: 0;
-  display: flex;
+.crane-facet {
+  stroke: rgba(0, 0, 0, 0.2);
+  stroke-width: 1;
+  opacity: 0;
+  transform-origin: 100px 90px;
+  transform: scale(0.3) rotate(-25deg);
+  animation: foldIn 0.7s ease forwards;
+}
+
+.crane-fold {
+  stroke: rgba(0, 0, 0, 0.18);
+  stroke-width: 1;
+}
+
+@keyframes foldIn {
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.hero__status {
+  display: inline-flex;
   align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface2);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--soft);
+}
+
+.hero__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4caf6e;
+  box-shadow: 0 0 0 0 rgba(76, 175, 110, 0.6);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% { box-shadow: 0 0 0 0 rgba(76, 175, 110, 0.5); }
+  70% { box-shadow: 0 0 0 7px rgba(76, 175, 110, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(76, 175, 110, 0); }
+}
+
+.hero__headline {
+  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  line-height: 1.05;
+}
+
+.hero__subline {
+  max-width: 560px;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: var(--soft);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+}
+
+.hero__role {
+  display: inline-flex;
+  color: var(--accent);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.profile-image img {
-  width: 100px;
-  height: 265px;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+.hero__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 40px;
+  color: var(--faint);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
 }
 
-/* 13. Mobile Profile Card */
-@media (max-width: 768px) {
-  .profile-card {
-    display: flex;
-    margin-bottom: 2rem;
-    width: 70vw;
-    max-width: 300px;
-    padding: 24px;
-  }
-
-  .profile-image img {
-    width: 120px;
-    height: 180px;
-  }
-
-  .connect-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 24px;
-    font-size: 15px;
-    gap: 10px;
-    margin-top: 0;
-    width: fit-content;
-  }
-
-  .linkedin-icon {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-  }
+.hero__scroll svg {
+  animation: bounceArrow 1.6s ease-in-out infinite;
 }
 
-@media (max-width: 480px) {
-  .profile-card {
-    margin-bottom: 1.5rem;
-    padding: 20px;
-  }
-
-  .profile-image img {
-    width: 275px;
-    height: 270px;
-  }
-
-  .connect-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 24px;
-    font-size: 15px;
-    gap: 10px;
-    margin: 10px auto 0;
-    width: fit-content;
-    min-width: 200px;
-  }
-
-  .linkedin-icon {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-  }
-}
-
-/* 13. Desktop Profile Card */
-@media (min-width: 769px) {
-  .profile-card {
-    max-width: 450px;
-    padding: 20px 24px;
-  }
-
-  .profile-image img {
-    width: 70px;
-    height: 70px;
-  }
-
-  .profile-info h3 {
-    font-size: 20px;
-  }
-
-  .profile-info p {
-    font-size: 15px;
-  }
-
-  .profile-info p:last-child {
-    font-size: 13px;
-  }
+@keyframes bounceArrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }

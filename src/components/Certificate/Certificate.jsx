@@ -1,52 +1,34 @@
 import React from 'react';
-import './Certificate.css';
 import b1 from '../../assets/images/b1.png';
 import b2 from '../../assets/images/b2.png';
 import b3 from '../../assets/images/b3.png';
 import b4 from '../../assets/images/b4.png';
 import b5 from '../../assets/images/b5.png';
-import certificates from './data.json';
+import data from '../../data.json';
+import './Certificate.css';
 
-const IMAGES = {
-  b1,
-  b2,
-  b3,
-  b4,
-  b5,
-};
+const IMAGES = { 1: b1, 2: b2, 3: b3, 4: b4, 5: b5, 6: b5 };
 
-const Certificate = () => {
+export default function Certificate() {
   return (
-    <section className="certificate-section">
-      <div className="certificate-container">
-        <h2 className="certificate-title">Certificates</h2>
-        <div className="certificate-grid">
-          {certificates.map((cert) => (
-            <div key={cert.id} className="certificate-card">
-              <div className="certificate-image">
-                <img src={IMAGES[cert.imageKey]} alt={cert.name} />
-              </div>
-              <div className="certificate-info">
-                <h3 className="certificate-name">{cert.name}</h3>
-                <p className="certificate-description">{cert.description}</p>
-                <div className="certificate-score-btn-container">
-                  <span className="certificate-score">{cert.score}</span>
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="certificate-btn"
-                  >
-                    View Certificate →
-                  </a>
-                </div>
-              </div>
+    <section id="certificates" className="section">
+      <div className="section-head">
+        <span className="section-num mono">07 / certificates</span>
+        <span className="section-rule" />
+      </div>
+      <h2>Certificates</h2>
+
+      <div className="certs__grid">
+        {data.certificates.map((cert) => (
+          <a key={cert.id} className="certs__row card" href={cert.link} target="_blank" rel="noreferrer">
+            <img src={IMAGES[cert.id]} alt={cert.name} loading="lazy" />
+            <div>
+              <h4>{cert.name}</h4>
+              <p>{cert.score} · {cert.description}</p>
             </div>
-          ))}
-        </div>
+          </a>
+        ))}
       </div>
     </section>
   );
-};
-
-export default Certificate;
+}
