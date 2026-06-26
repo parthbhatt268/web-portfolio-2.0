@@ -1,56 +1,212 @@
 .experience__list {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
   margin-top: 40px;
 }
 
+/* ── Card: text left, image right ── */
 .experience__card {
-  display: flex;
-  gap: 28px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 36px;
   padding: 32px;
-  align-items: flex-start;
+  align-items: start;
 }
 
-.experience__logo {
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
-  border-radius: 14px;
-  flex-shrink: 0;
+/* ── Left column ── */
+.experience__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
 }
 
-.experience__duration {
-  color: var(--faint);
-  font-size: 0.8rem;
+/* Company header */
+.experience__header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.experience__body h3 {
-  margin: 6px 0 2px;
-  font-size: 1.25rem;
+.experience__top-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .experience__company {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.experience__link {
   color: var(--accent);
+  font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 16px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.experience__tenure {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.experience__duration {
+  color: var(--soft);
+  font-size: 0.82rem;
+}
+
+.experience__total-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+/* ── Timeline ── */
+.experience__timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience__step {
+  display: flex;
+  gap: 18px;
+}
+
+.experience__step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 14px;
+}
+
+.experience__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 5px;
+  box-shadow: 0 0 0 3px var(--surface), 0 0 0 4px var(--accent);
+}
+
+.experience__stem {
+  width: 2px;
+  flex: 1;
+  background: var(--line);
+  margin: 8px 0 0;
+}
+
+.experience__step-content {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 28px;
+}
+
+.experience__step:last-child .experience__step-content {
+  padding-bottom: 0;
+}
+
+.experience__role-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.experience__role-header strong {
+  font-size: 0.98rem;
+  color: var(--ink);
+}
+
+.experience__step-period {
+  font-size: 0.74rem;
+  color: var(--faint);
+}
+
+.experience__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.experience__bullets li {
+  font-size: 0.875rem;
+  color: var(--soft);
+  line-height: 1.65;
+  padding-left: 16px;
+  position: relative;
+}
+
+.experience__bullets li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--accent);
+  font-size: 0.72rem;
+}
+
+/* ── Tech used (de-emphasised) ── */
+.experience__skills {
+  opacity: 0.7;
+}
+
+.experience__skills-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--faint);
+  margin-bottom: 8px;
 }
 
 .experience__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 18px;
+  gap: 6px;
 }
 
-.experience__link {
-  color: var(--accent);
-  font-size: 0.9rem;
-  font-weight: 600;
+.experience__pill {
+  font-size: 0.78rem;
+  padding: 4px 10px;
 }
 
-@media (max-width: 640px) {
+/* ── Right column: company image ── */
+.experience__photo {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  position: sticky;
+  top: 100px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 760px) {
   .experience__card {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+
+  .experience__photo {
+    display: none;
   }
 }

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import RotatingText from '../Effects/RotatingText/RotatingText';
+import { useTheme } from '../../ThemeContext';
 import data from '../../data.json';
 import './Home.css';
 
@@ -19,11 +20,48 @@ function PaperCrane() {
           key={i}
           points={f.points}
           className="crane-facet"
-          style={{ animationDelay: `${f.delay}s`, fill: f.shade ? 'var(--accent)' : 'var(--surface)' }}
+          style={{ animationDelay: `${f.delay}s`, fill: f.shade ? 'var(--accent)' : 'var(--crane-light)' }}
         />
       ))}
       <line x1="100" y1="30" x2="100" y2="150" className="crane-fold" />
     </svg>
+  );
+}
+
+function ScrollMoon() {
+  const { theme } = useTheme();
+  const [phase, setPhase] = useState(0);
+
+  useEffect(() => {
+    if (theme !== 'dark') return;
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = window.scrollY / Math.max(max, 1); // 0 → 1
+      // crescent at top (phase=0.76), grows to full moon as you scroll (phase→0)
+      setPhase(0.76 * (1 - progress));
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+    return () => window.removeEventListener('scroll', update);
+  }, [theme]);
+
+  if (theme !== 'dark') return null;
+
+  const SIZE = 130;
+  const SHADOW = SIZE + 20;
+  // full moon: shadow is fully off to the right; crescent: shadow slides left
+  const shadowX = SHADOW - phase * (SHADOW + SIZE * 0.55);
+
+  return (
+    <div className="scroll-moon" aria-hidden="true">
+      <div className="scroll-moon__glow" />
+      <div className="scroll-moon__body">
+        <div
+          className="scroll-moon__shadow"
+          style={{ transform: `translateX(${shadowX.toFixed(1)}px)` }}
+        />
+      </div>
+    </div>
   );
 }
 
@@ -33,6 +71,8 @@ export default function Home() {
 
   return (
     <section id="home" className="hero">
+      <ScrollMoon />
+
       <div className="hero__crane">
         <PaperCrane />
       </div>
@@ -50,13 +90,14 @@ export default function Home() {
           texts={roles}
           mainClassName="hero__role"
           splitLevelClassName="hero__role-split"
-          staggerFrom="last"
-          initial={{ y: '100%' }}
-          animate={{ y: 0 }}
-          exit={{ y: '-120%' }}
-          staggerDuration={0.025}
-          transition={{ type: 'spring', damping: 30, stiffness: 400 }}
-          rotationInterval={2200}
+          splitBy="words"
+          staggerDuration={0.06}
+          staggerFrom="first"
+          initial={{ opacity: 0, y: 12, filter: 'blur(6px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          exit={{ opacity: 0, y: -12, filter: 'blur(6px)' }}
+          transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+          rotationInterval={2400}
         />
         {after}
       </p>

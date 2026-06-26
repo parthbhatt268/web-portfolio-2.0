@@ -1,36 +1,104 @@
 .certs__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   margin-top: 40px;
 }
 
-.certs__row {
+.certs__card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 18px;
-  padding: 18px 22px;
+  text-align: center;
+  padding: 32px 20px 28px;
+  gap: 0;
 }
 
-.certs__row img {
-  width: 48px;
-  height: 48px;
+.certs__badge {
+  width: 76px;
+  height: 76px;
   object-fit: contain;
-  flex-shrink: 0;
+  margin-bottom: 16px;
 }
 
-.certs__row h4 {
-  font-size: 0.95rem;
-  margin-bottom: 4px;
+.certs__score {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
 }
 
-.certs__row p {
-  font-size: 0.82rem;
-  color: var(--soft);
+.certs__name {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin-bottom: 6px;
 }
 
-@media (max-width: 760px) {
+.certs__desc {
+  font-size: 0.76rem;
+  color: var(--faint);
+}
+
+@media (max-width: 900px) {
+  .certs__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
   .certs__grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Horizontal tile: logo left, text right */
+  .certs__card {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    grid-template-rows: auto auto auto;
+    text-align: left;
+    padding: 14px 16px;
+    gap: 2px 14px;
+    align-items: center;
+  }
+
+  .certs__badge {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0;
+    align-self: center;
+  }
+
+  .certs__score {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 0.7rem;
+    padding: 2px 9px;
+    margin-bottom: 0;
+    align-self: end;
+    justify-self: start;
+  }
+
+  .certs__name {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 0.76rem;
+    line-height: 1.35;
+    margin-bottom: 0;
+  }
+
+  .certs__desc {
+    grid-column: 2;
+    grid-row: 3;
+    font-size: 0.67rem;
   }
 }

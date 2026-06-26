@@ -1,3 +1,49 @@
+/* ── Scroll-phase moon (dark mode only) ── */
+.scroll-moon {
+  position: fixed;
+  top: 7%;
+  right: 7%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  .scroll-moon {
+    display: none;
+  }
+}
+
+.scroll-moon__glow {
+  display: none;
+}
+
+.scroll-moon__body {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  /* White moon base with grey surface variation */
+  background:
+    radial-gradient(circle at 62% 38%, rgba(160,160,160,0.35) 0%, transparent 22%),
+    radial-gradient(circle at 28% 60%, rgba(140,140,140,0.28) 0%, transparent 16%),
+    radial-gradient(circle at 74% 70%, rgba(150,150,150,0.22) 0%, transparent 12%),
+    radial-gradient(circle at 42% 22%, rgba(130,130,130,0.18) 0%, transparent 10%),
+    radial-gradient(circle at 50% 50%, #f4f4f4 0%, #dcdcdc 60%, #c8c8c8 100%);
+  overflow: hidden;
+}
+
+.scroll-moon__shadow {
+  position: absolute;
+  width: 154px;
+  height: 154px;
+  top: -12px;
+  left: -12px;
+  border-radius: 50%;
+  background: var(--bg);
+  box-shadow: none;
+  transition: transform 0.08s linear;
+}
+
 .hero {
   position: relative;
   z-index: 1;
@@ -16,7 +62,7 @@
 }
 
 .crane-facet {
-  stroke: rgba(0, 0, 0, 0.2);
+  stroke: var(--crane-stroke);
   stroke-width: 1;
   opacity: 0;
   transform-origin: 100px 90px;
@@ -25,7 +71,7 @@
 }
 
 .crane-fold {
-  stroke: rgba(0, 0, 0, 0.18);
+  stroke: var(--crane-fold);
   stroke-width: 1;
 }
 

@@ -16,29 +16,76 @@
 }
 
 .education__body {
-  padding: 26px 28px 30px;
+  padding: 22px 26px 28px;
+}
+
+/* Duration — most prominent */
+.education__duration-row {
+  margin-bottom: 10px;
+}
+
+.education__duration {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--surface2);
+  border: 1px solid var(--line);
+  font-size: 0.78rem;
+  color: var(--soft);
+}
+
+.education__body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
 }
 
 .education__university {
   color: var(--accent);
   font-weight: 600;
-  margin: 4px 0 10px;
+  margin-bottom: 4px;
 }
 
 .education__course {
   color: var(--soft);
-  margin-bottom: 10px;
+  font-size: 0.88rem;
+  margin-bottom: 14px;
 }
 
-.education__badge {
+/* Score — highlighted */
+.education__score-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
   margin-bottom: 16px;
 }
 
+.education__score {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.education__score-detail {
+  font-size: 0.8rem;
+  color: var(--soft);
+  font-style: italic;
+}
+
+/* Subjects — de-emphasised */
 .education__subjects {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
   margin-bottom: 18px;
+  opacity: 0.75;
 }
 
 .education__link {

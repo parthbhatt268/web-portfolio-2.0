@@ -16,9 +16,29 @@
   "workExperience": [
     {
       "id": 1,
-      "position": "Software Developer Engineer",
+      "position": "Software Engineer",
       "company": "Siren",
       "duration": "Jan 2024 - Present",
+      "totalDuration": "2 yrs 5 mos",
+      "progression": [
+        {
+          "role": "Intern",
+          "period": "Jan 2024 – Mar 2024",
+          "bullets": [
+            "Built an Ollama + Langchain RAG documentation app, boosting client engagement by 4×.",
+            "Automated i18n for 1,600+ strings across 15+ languages via OpenAI ChatGPT API."
+          ]
+        },
+        {
+          "role": "Software Engineer",
+          "period": "Apr 2024 – Present",
+          "bullets": [
+            "Cut 24% cloud costs by optimising Kubernetes POD allocation in the CI/CD pipeline.",
+            "Coded 3 G6 graph features, helping secure a $235K annual contract.",
+            "Migrated deprecated Elasticsearch client to ES9, enabling 23 clients to upgrade."
+          ]
+        }
+      ],
       "coreTech": [
         "Frontend - React, Angular, JavaScript, TypeScript, HTML, CSS",
         "Backend - Node, Express",
@@ -32,11 +52,31 @@
     },
     {
       "id": 2,
-      "position": "Senior Software Developer Engineer",
+      "position": "Senior Software Developer",
       "company": "Reliance Jio",
-      "duration": "Nov 2020 - July 2023",
+      "duration": "Nov 2020 - Jul 2023",
+      "totalDuration": "2 yrs 8 mos",
+      "progression": [
+        {
+          "role": "Software Developer",
+          "period": "Nov 2020 – 2021",
+          "bullets": [
+            "Migrated MARCOM and 5 legacy projects from JavaScript to TypeScript + functional React, improving OOP design by 40%.",
+            "Launched the JIO Bharat Phone website end-to-end within a month for PAN Indian retailers."
+          ]
+        },
+        {
+          "role": "Senior Software Developer",
+          "period": "2022 – Jul 2023",
+          "bullets": [
+            "Led 8-member team with Agile/Scrum, owning architecture decisions and DevOps workflows.",
+            "Built 18+ apps from scratch using TDD and SOLID principles with a robust MVC architecture.",
+            "Introduced JEST TDD, cutting bugs by 80% across all feature branches."
+          ]
+        }
+      ],
       "coreTech": [
-        "React, Javascript, Redux, Reduc-toolkit, Thunk",
+        "React, Javascript, Redux, Redux-toolkit, Thunk",
         "Microservices Architecture",
         "Redis, MySQL & PostgreSQL Database"
       ],
@@ -47,37 +87,36 @@
   "education": [
     {
       "id": 1,
-      "degree": "Masters of science",
+      "degree": "Masters of Science",
       "university": "University of Galway, Ireland",
       "course": "Information System Management",
-      "duration": "Sept 2023 - May 2024",
-      "score": "Aimed to get 1H (First Class Honours)",
+      "duration": "Aug 2023 – Aug 2024",
+      "score": "1st Class Honours",
+      "scoreDetail": "First Class Honours in all Tech Modules",
       "coreSubjects": [
         "Web Development",
-        "C#(C Sharp)Programming",
+        "C# Programming",
         "Database Management",
-        "Machine Learning and Modelling",
+        "Machine Learning",
         "Cloud Computing"
       ],
-      "image": "src/assets/images/Master_University.jpeg",
       "visitLink": "https://www.universityofgalway.ie/"
     },
     {
       "id": 2,
       "degree": "Bachelor of Engineering",
       "university": "Mumbai University, India",
-      "course": "",
-      "duration": "August 2016 - August 2020",
-      "score": "8.61/10 (First Class Honours)",
+      "course": "Computer Engineering",
+      "duration": "Aug 2016 – Jul 2020",
+      "score": "8.61 / 10",
+      "scoreDetail": "First Class Honours",
       "coreSubjects": [
-        "Object Oriented Programming",
-        "Java Programming",
+        "OOP & Java",
         "Database Management",
         "C/C++ Programming",
         "Network Security",
         "Data Encryption"
       ],
-      "image": "src/assets/images/Bachelor_University.jpg",
       "visitLink": "https://mu.ac.in/"
     }
   ],
@@ -134,84 +173,83 @@
   "projects": [
     {
       "id": 1,
-      "title": "Rapid Basket - A end to end Food Ordering Website",
-      "description": "",
-      "techStack": [
-        "React, Redux, Redux Toolkit Thunk",
-        "HTML, CSS, Javascript",
-        "ExpressJS and NodeJS REST API",
-        "MongoDb Database",
-        "Stripe Payment Integration",
-        "Amazon Web Service (AWS) Deployment"
-      ],
-      "image": "src/assets/images/rapis-basket.png",
-      "liveLink": "https://rapid-basket.netlify.app/",
-      "githubLink": "https://github.com/parthbhatt268/ui-rapidBasket"
+      "imageKey": "brainStack",
+      "title": "Brain Stack — AI Knowledge Graph Platform",
+      "date": "May 2026",
+      "techCategories": {
+        "Frontend": ["React 19", "ReactFlow", "Vite"],
+        "Backend": ["Node.js", "Express", "Supabase", "pgvector"],
+        "AI & Auth": ["Google Gemini API", "Supabase Auth", "Google OAuth"],
+        "Deploy": ["Netlify", "Render"]
+      },
+      "liveLink": "https://brain-stacked.netlify.app/",
+      "githubLink": "https://github.com/parthbhatt268/brain-stack"
     },
     {
       "id": 2,
-      "title": "Fire Chat - A Web based group chatting application",
-      "description": "",
-      "techStack": [
-        "Frontend - React, Javascript, HTML, CSS",
-        "Auth - Google SSO",
-        "Database - Firebase"
-      ],
-      "image": "src/assets/images/chat-app.png",
-      "liveLink": "https://webchat-4d001.web.app/",
-      "githubLink": "https://github.com/parthbhatt268/Fire-Chat"
+      "imageKey": "rapidBasket",
+      "title": "Rapid Basket — End-to-End Food Ordering App",
+      "date": "Jun 2023",
+      "techCategories": {
+        "Frontend": ["React", "Redux Toolkit", "JavaScript", "CSS"],
+        "Backend": ["Node.js", "Express", "MongoDB"],
+        "Payment & Deploy": ["Stripe", "AWS"]
+      },
+      "liveLink": "https://rapid-basket.netlify.app/",
+      "githubLink": "https://github.com/parthbhatt268/ui-rapidBasket"
     }
   ],
   "skills": {
     "Frontend": [
-      { "name": "HTML", "link": "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-      { "name": "CSS", "link": "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-      { "name": "JavaScript", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-      { "name": "React", "link": "https://reactjs.org/" },
-      { "name": "Next.js", "link": "https://nextjs.org/" },
-      { "name": "AngularJS", "link": "https://angular.io/" },
-      { "name": "Redux Toolkit", "link": "https://redux-toolkit.js.org/" },
-      { "name": "Material UI", "link": "https://mui.com/" },
-      { "name": "Bootstrap", "link": "https://getbootstrap.com/" }
+      { "name": "HTML", "iconKey": "html", "link": "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+      { "name": "CSS", "iconKey": "css", "link": "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+      { "name": "JavaScript", "iconKey": "js", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+      { "name": "TypeScript", "iconKey": "typescript", "link": "https://www.typescriptlang.org/" },
+      { "name": "React", "iconKey": "react", "link": "https://reactjs.org/" },
+      { "name": "Next.js", "iconKey": "next", "link": "https://nextjs.org/" },
+      { "name": "AngularJS", "iconKey": "angular", "link": "https://angular.io/" },
+      { "name": "Redux Toolkit", "iconKey": "redux", "link": "https://redux-toolkit.js.org/" },
+      { "name": "Material UI", "iconKey": "materialUI", "link": "https://mui.com/" },
+      { "name": "Bootstrap", "iconKey": "bootstrap", "link": "https://getbootstrap.com/" }
     ],
     "Backend & APIs": [
-      { "name": "Node.js", "link": "https://nodejs.org/" },
-      { "name": "Express.js", "link": "https://expressjs.com/" },
-      { "name": "REST API", "link": "https://restfulapi.net/" },
-      { "name": "GraphQL", "link": "https://graphql.org/" },
-      { "name": "JWT", "link": "https://jwt.io/" },
-      { "name": "Firebase", "link": "https://firebase.google.com/" },
-      { "name": "Stripe Payments", "link": "https://stripe.com/" },
-      { "name": "OpenAI LLM (API)", "link": "https://openai.com/api/" }
+      { "name": "Node.js", "iconKey": "node", "link": "https://nodejs.org/" },
+      { "name": "Express.js", "iconKey": "express", "link": "https://expressjs.com/" },
+      { "name": "REST API", "iconKey": "rest", "link": "https://restfulapi.net/" },
+      { "name": "GraphQL", "iconKey": "graphql", "link": "https://graphql.org/" },
+      { "name": "JWT", "iconKey": "jwt", "link": "https://jwt.io/" },
+      { "name": "Firebase", "iconKey": "firebase", "link": "https://firebase.google.com/" },
+      { "name": "Stripe Payments", "iconKey": "stripe", "link": "https://stripe.com/" },
+      { "name": "OpenAI LLM (API)", "iconKey": "openai", "link": "https://openai.com/api/" }
     ],
     "Databases & Test": [
-      { "name": "MongoDB", "link": "https://www.mongodb.com/" },
-      { "name": "Elasticsearch", "link": "https://www.elastic.co/elasticsearch/" },
-      { "name": "MariaDB", "link": "https://mariadb.org/" },
-      { "name": "SQL", "link": "https://www.mysql.com/" },
-      { "name": "OpenSearch", "link": "https://opensearch.org/" },
-      { "name": "Jest", "link": "https://jestjs.io/" },
-      { "name": "Cypress", "link": "https://www.cypress.io/" }
+      { "name": "MongoDB", "iconKey": "mongodb", "link": "https://www.mongodb.com/" },
+      { "name": "Elasticsearch", "iconKey": "elasticsearch", "link": "https://www.elastic.co/elasticsearch/" },
+      { "name": "MariaDB", "iconKey": "mariadb", "link": "https://mariadb.org/" },
+      { "name": "SQL", "iconKey": "mysql", "link": "https://www.mysql.com/" },
+      { "name": "OpenSearch", "iconKey": "opensearch", "link": "https://opensearch.org/" },
+      { "name": "Jest", "iconKey": "jest", "link": "https://jestjs.io/" },
+      { "name": "Cypress", "iconKey": "cypress", "link": "https://www.cypress.io/" }
     ],
     "DevOps, Cloud & CI/CD": [
-      { "name": "Docker", "link": "https://www.docker.com/" },
-      { "name": "Kubernetes", "link": "https://kubernetes.io/" },
-      { "name": "Jenkins (CI/CD)", "link": "https://www.jenkins.io/" },
-      { "name": "AWS", "link": "https://aws.amazon.com/" },
-      { "name": "Google Cloud", "link": "https://cloud.google.com/" }
+      { "name": "Docker", "iconKey": "docker", "link": "https://www.docker.com/" },
+      { "name": "Kubernetes", "iconKey": "kubernetes", "link": "https://kubernetes.io/" },
+      { "name": "Jenkins (CI/CD)", "iconKey": "jenkins", "link": "https://www.jenkins.io/" },
+      { "name": "AWS", "iconKey": "aws", "link": "https://aws.amazon.com/" },
+      { "name": "Google Cloud", "iconKey": "googleCloud", "link": "https://cloud.google.com/" }
     ],
     "Version Control & Other Tech": [
-      { "name": "Git", "link": "https://git-scm.com/" },
-      { "name": "GitHub", "link": "https://github.com/" },
-      { "name": "NPM", "link": "https://www.npmjs.com/" },
-      { "name": "Yarn", "link": "https://yarnpkg.com/" },
-      { "name": "Groovy", "link": "https://groovy-lang.org/" },
-      { "name": "YAML", "link": "https://yaml.org/" }
+      { "name": "Git", "iconKey": "git", "link": "https://git-scm.com/" },
+      { "name": "GitHub", "iconKey": "github", "link": "https://github.com/" },
+      { "name": "NPM", "iconKey": "npm", "link": "https://www.npmjs.com/" },
+      { "name": "Yarn", "iconKey": "yarn", "link": "https://yarnpkg.com/" },
+      { "name": "Groovy", "iconKey": "groovy", "link": "https://groovy-lang.org/" },
+      { "name": "YAML", "iconKey": "yml", "link": "https://yaml.org/" }
     ],
     "Operating Systems": [
-      { "name": "Linux", "link": "https://www.linux.org/" },
-      { "name": "Windows", "link": "https://www.microsoft.com/windows/" },
-      { "name": "Mac", "link": "https://www.apple.com/macos/" }
+      { "name": "Linux", "iconKey": "linux", "link": "https://www.linux.org/" },
+      { "name": "Windows", "iconKey": "windows", "link": "https://www.microsoft.com/windows/" },
+      { "name": "Mac", "iconKey": "mac", "link": "https://www.apple.com/macos/" }
     ]
   },
   "recentWork": [

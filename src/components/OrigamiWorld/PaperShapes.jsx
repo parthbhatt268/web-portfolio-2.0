@@ -96,6 +96,22 @@ export function PaperSun(props) {
   );
 }
 
+export function PaperMoon(props) {
+  return (
+    <svg viewBox="0 0 100 100" {...props}>
+      {/* Full-circle origami moon — octagonal facets */}
+      <polygon points="50,8 79,21 92,50 79,79 50,92 21,79 8,50 21,21" fill="currentColor" />
+      <polygon points="50,8 79,21 50,50 21,21" style={shade} />
+      <polygon points="50,50 79,79 50,92 21,79" style={shadeDeep} />
+      <polygon points="50,8 50,50 21,21" style={shadeDeep} />
+      <line x1="50" y1="8" x2="50" y2="92" {...fold} />
+      <line x1="21" y1="21" x2="79" y2="79" {...fold} />
+      <line x1="79" y1="21" x2="21" y2="79" {...fold} />
+      <line x1="8" y1="50" x2="92" y2="50" {...fold} />
+    </svg>
+  );
+}
+
 export function PaperCloud(props) {
   return (
     <svg viewBox="0 0 120 60" {...props}>

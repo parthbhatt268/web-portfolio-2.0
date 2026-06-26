@@ -19,16 +19,32 @@ export default function Education() {
         {data.education.map((edu) => (
           <div key={edu.id} className="education__card card">
             <img className="education__img" src={IMAGES[edu.id]} alt={edu.university} loading="lazy" />
+
             <div className="education__body">
+              {/* Duration — top priority */}
+              <div className="education__duration-row">
+                <span className="education__duration mono">{edu.duration}</span>
+              </div>
+
               <h3>{edu.degree}</h3>
               <p className="education__university">{edu.university}</p>
               {edu.course && <p className="education__course">{edu.course}</p>}
-              <span className="pill education__badge">{edu.score}</span>
+
+              {/* Score — highlighted badge */}
+              <div className="education__score-wrap">
+                <span className="education__score">{edu.score}</span>
+                {edu.scoreDetail && (
+                  <span className="education__score-detail">{edu.scoreDetail}</span>
+                )}
+              </div>
+
+              {/* Core subjects — de-emphasised */}
               <div className="education__subjects">
                 {edu.coreSubjects.map((s) => (
                   <span key={s} className="pill">{s}</span>
                 ))}
               </div>
+
               <a className="education__link" href={edu.visitLink} target="_blank" rel="noreferrer">
                 Visit ↗
               </a>

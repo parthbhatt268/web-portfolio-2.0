@@ -16,7 +16,7 @@ export default function Footer() {
         <a className="btn btn-primary" href={linkedIn} target="_blank" rel="noreferrer">LinkedIn ↗</a>
         <a className="btn btn-ghost" href={githubUrl} target="_blank" rel="noreferrer">GitHub ↗</a>
       </div>
-      <p className="footer__copy mono">© {new Date().getFullYear()} {data.about.name} · Built with paper &amp; pixels</p>
+      <p className="footer__copy mono">© {new Date().getFullYear()} {data.about.name} · Made with ❤️ in Galway</p>
     </footer>
   );
 }

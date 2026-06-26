@@ -20,12 +20,11 @@ export default function Certificate() {
 
       <div className="certs__grid">
         {data.certificates.map((cert) => (
-          <a key={cert.id} className="certs__row card" href={cert.link} target="_blank" rel="noreferrer">
-            <img src={IMAGES[cert.id]} alt={cert.name} loading="lazy" />
-            <div>
-              <h4>{cert.name}</h4>
-              <p>{cert.score} · {cert.description}</p>
-            </div>
+          <a key={cert.id} className="certs__card card" href={cert.link} target="_blank" rel="noreferrer">
+            <img src={IMAGES[cert.id]} alt={cert.name} loading="lazy" className="certs__badge" />
+            <div className="certs__score">{cert.score}</div>
+            <h4 className="certs__name">{cert.name}</h4>
+            <p className="certs__desc">{cert.description}</p>
           </a>
         ))}
       </div>

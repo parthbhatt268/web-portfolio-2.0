@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useTheme } from '../../ThemeContext';
 import {
   PaperBird,
   PaperPlane,
@@ -41,6 +42,7 @@ const ACTORS = [
 ];
 
 export default function OrigamiWorld() {
+  const { theme } = useTheme();
   const layerRef = useRef(null);
   const actorRefs = useRef({});
   const moversCache = useRef({});
@@ -111,9 +113,11 @@ export default function OrigamiWorld() {
     return () => raf && cancelAnimationFrame(raf);
   }, []);
 
+  const visibleActors = theme === 'dark' ? ACTORS.filter((a) => a.id !== 'sun') : ACTORS;
+
   return (
     <div className="origami-world" ref={layerRef} aria-hidden="true">
-      {ACTORS.map((actor) => {
+      {visibleActors.map((actor) => {
         const { id, Shape, axis, top, size, color, mode } = actor;
         const positional = {
           position: 'absolute',

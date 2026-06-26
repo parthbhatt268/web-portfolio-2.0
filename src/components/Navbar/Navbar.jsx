@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTheme } from '../../ThemeContext';
-import { PaperBird } from '../OrigamiWorld/PaperShapes';
+import { PaperBird, PaperSun, PaperMoon } from '../OrigamiWorld/PaperShapes';
 import data from '../../data.json';
 import './Navbar.css';
 
@@ -48,9 +48,9 @@ export default function Navbar() {
         <div className="nav__right">
           <button className="nav__theme" onClick={toggleTheme} aria-label="Toggle theme">
             {theme === 'light' ? (
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5" /><g stroke="currentColor" strokeWidth="2"><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /></g></svg>
+              <PaperSun width="20" height="20" style={{ color: 'var(--accent)' }} />
             ) : (
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.3A9 9 0 1 1 11.7 3a7 7 0 0 0 9.3 9.3z" /></svg>
+              <PaperMoon width="20" height="20" style={{ color: 'var(--soft)' }} />
             )}
             <span>{theme === 'light' ? 'Light' : 'Dark'}</span>
           </button>

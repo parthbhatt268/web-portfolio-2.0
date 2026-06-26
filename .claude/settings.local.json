@@ -5,7 +5,12 @@
       "Bash(node -e \"const fs=require\\('fs'\\); const c=fs.readFileSync\\('src/components/Navbar/Navbar.jsx','utf8'\\); const lines=c.split\\('\\\\n'\\).slice\\(0,5\\); lines.forEach\\(\\(l,i\\)=>console.log\\(i+1,JSON.stringify\\(l\\)\\)\\)\")",
       "Bash(node -e \"const fs=require\\('fs'\\); console.log\\(fs.realpathSync\\('src/components/Navbar/navbar.json'\\)\\); console.log\\(fs.realpathSync\\('src/components/Home/home.json'\\)\\);\")",
       "Bash(node -e ' *)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Skill(run)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('projects', []\\), indent=2\\)\\)\")",
+      "Bash(node -e \"const d=require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\); const j=JSON.parse\\(d\\); console.log\\(JSON.stringify\\(j.projects,null,2\\)\\)\")",
+      "Bash(node -e \"process.stdin.resume\\(\\); let d=''; process.stdin.on\\('data',c=>d+=c\\); process.stdin.on\\('end',\\(\\)=>{const j=JSON.parse\\(d\\); console.log\\(JSON.stringify\\(j.projects,null,2\\)\\)}\\)\")",
+      "Bash(git ls-tree *)"
     ]
   }
 }
