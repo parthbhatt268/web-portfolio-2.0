@@ -11,6 +11,7 @@ import {
   PaperFox,
   PaperRocket,
   PaperCart,
+  PaperJeep,
 } from './PaperShapes';
 import './OrigamiWorld.css';
 
@@ -39,6 +40,7 @@ const ACTORS = [
   { id: 'fox', Shape: PaperFox, axis: 'x', top: 86, base: 20, size: 90, color: '#C2693F', mode: 'sway', speed: 0.7, dir: 1, wrap: 140, bob: 4 },
   { id: 'rabbit', Shape: PaperRabbit, axis: 'x', top: 88, base: 60, size: 60, color: '#D98E6E', mode: 'sway', speed: 0.9, dir: -1, wrap: 140, bob: 6 },
   { id: 'cart', Shape: PaperCart, axis: 'x', top: 84, base: 40, size: 110, color: '#84A07C', mode: 'roll', speed: 0.55, dir: -1, wrap: 150, bob: 0 },
+  { id: 'jeep', Shape: PaperJeep, axis: 'x', top: 83, base: 55, size: 140, color: '#5A7A42', mode: 'roll', speed: 0.40, dir: 1, wrap: 165, bob: 0 },
 ];
 
 export default function OrigamiWorld() {
@@ -87,10 +89,14 @@ export default function OrigamiWorld() {
         }
         el.style.transform = transform;
 
-        if (!moversCache.current[actor.id]) {
-          moversCache.current[actor.id] = Array.from(el.querySelectorAll('[data-mover]'));
+        const cached = moversCache.current[actor.id];
+        if (!cached || cached.node !== el) {
+          moversCache.current[actor.id] = {
+            node: el,
+            list: Array.from(el.querySelectorAll('[data-mover]')),
+          };
         }
-        moversCache.current[actor.id].forEach((mover) => {
+        moversCache.current[actor.id].list.forEach((mover) => {
           const type = mover.dataset.mover;
           let angle = 0;
           if (type === 'wing') {

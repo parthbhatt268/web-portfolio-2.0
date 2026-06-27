@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Left wing -->
+  <polygon points="16,13 2,9 12,19 16,19" fill="#c2693f"/>
+  <!-- Right wing (lighter facet) -->
+  <polygon points="16,13 30,9 20,19 16,19" fill="#e08a5f"/>
+  <!-- Body -->
+  <polygon points="16,7 20,19 16,25 12,19" fill="#c2693f"/>
+  <!-- Body shade fold -->
+  <polygon points="16,7 20,19 16,13" fill="rgba(0,0,0,0.14)"/>
+  <!-- Head / beak -->
+  <polygon points="16,7 14,3 18,3" fill="#c2693f"/>
+  <!-- Tail left -->
+  <polygon points="12,25 16,25 13,30" fill="#e08a5f"/>
+  <!-- Tail right -->
+  <polygon points="20,25 16,25 19,30" fill="#c2693f"/>
+  <!-- Centre fold crease -->
+  <line x1="16" y1="7" x2="16" y2="25" stroke="rgba(255,255,255,0.28)" stroke-width="0.6"/>
+</svg>

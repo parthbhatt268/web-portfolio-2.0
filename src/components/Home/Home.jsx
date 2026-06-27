@@ -6,12 +6,12 @@ import './Home.css';
 
 function PaperCrane() {
   const facets = [
-    { points: '100,30 140,90 100,150 100,90', delay: 0 },
-    { points: '100,30 60,90 100,150 100,90', delay: 0.08, shade: true },
-    { points: '100,150 140,90 175,150 130,185', delay: 0.16 },
-    { points: '100,150 60,90 25,150 70,185', delay: 0.24, shade: true },
-    { points: '100,30 90,4 110,4', delay: 0.32 },
-    { points: '70,185 100,150 130,185 100,220', delay: 0.4, shade: true },
+    { points: '100,200 140,140 100,80 100,140', delay: 0 },
+    { points: '100,200 60,140 100,80 100,140', delay: 0.08, shade: true },
+    { points: '100,80 140,140 175,80 130,45', delay: 0.16 },
+    { points: '100,80 60,140 25,80 70,45', delay: 0.24, shade: true },
+    { points: '100,200 90,226 110,226', delay: 0.32 },
+    { points: '70,45 100,80 130,45 100,10', delay: 0.4, shade: true },
   ];
   return (
     <svg className="crane" viewBox="0 0 200 230" width="180" height="200">
@@ -23,7 +23,7 @@ function PaperCrane() {
           style={{ animationDelay: `${f.delay}s`, fill: f.shade ? 'var(--accent)' : 'var(--crane-light)' }}
         />
       ))}
-      <line x1="100" y1="30" x2="100" y2="150" className="crane-fold" />
+      <line x1="100" y1="200" x2="100" y2="80" className="crane-fold" />
     </svg>
   );
 }
@@ -38,7 +38,7 @@ function ScrollMoon() {
       const max = document.documentElement.scrollHeight - window.innerHeight;
       const progress = window.scrollY / Math.max(max, 1); // 0 → 1
       // crescent at top (phase=0.76), grows to full moon as you scroll (phase→0)
-      setPhase(0.76 * (1 - progress));
+      setPhase(0.88 * (1 - progress));
     };
     window.addEventListener('scroll', update, { passive: true });
     update();

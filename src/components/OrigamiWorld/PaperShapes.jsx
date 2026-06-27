@@ -179,6 +179,24 @@ export function PaperRocket(props) {
   );
 }
 
+/* Inline wheel centered at (cx, cy) — avoids nested-SVG viewport bugs */
+function WheelG({ cx, cy }) {
+  return (
+    <g transform={`translate(${cx} ${cy})`}>
+      <g data-mover="wheel" style={{ transformOrigin: '0px 0px' }}>
+        <polygon
+          points="0,-20.8 17.6,-10.4 17.6,10.4 0,20.8 -17.6,10.4 -17.6,-10.4"
+          fill="currentColor"
+        />
+        <polygon points="0,-20.8 17.6,-10.4 0,0 -17.6,-10.4" style={shade} />
+        <polygon points="0,0 17.6,10.4 0,20.8 -17.6,10.4" style={shadeDeep} />
+        <line x1="0" y1="-20.8" x2="0" y2="20.8" {...fold} />
+        <line x1="-17.6" y1="-10.4" x2="17.6" y2="10.4" {...fold} />
+      </g>
+    </g>
+  );
+}
+
 export function HexWheel(props) {
   return (
     <svg viewBox="0 0 60 60" {...props}>
@@ -196,21 +214,61 @@ export function HexWheel(props) {
   );
 }
 
+export function PaperJeep(props) {
+  return (
+    <svg viewBox="0 0 175 90" {...props}>
+      {/* Rear body */}
+      <polygon points="8,24 26,24 26,66 8,66" fill="currentColor" />
+      <polygon points="8,24 26,24 17,44 8,44" style={shade} />
+
+      {/* Main cabin with flat roof */}
+      <polygon points="26,14 106,14 106,66 26,66" fill="currentColor" />
+      <polygon points="26,14 106,14 66,22 26,22" style={shade} />
+
+      {/* Windshield — upright A-pillar */}
+      <polygon points="106,14 120,20 120,44 106,44" fill="currentColor" />
+      <polygon points="106,14 120,20 113,44 106,44" style={shadeDeep} />
+
+      {/* Hood */}
+      <polygon points="120,40 162,40 162,66 120,66" fill="currentColor" />
+      <polygon points="120,40 162,40 141,52 120,52" style={shade} />
+
+      {/* Front bumper */}
+      <polygon points="160,46 167,50 167,66 160,66" fill="currentColor" opacity={0.8} />
+
+      {/* Chassis rail */}
+      <polygon points="8,62 162,62 162,66 8,66" fill="currentColor" opacity={0.9} />
+      <polygon points="8,62 162,62 162,64 8,64" style={shade} />
+
+      {/* Fold crease lines */}
+      <line x1="26" y1="14" x2="106" y2="14" {...fold} />
+      <line x1="106" y1="14" x2="120" y2="20" {...fold} />
+      <line x1="120" y1="40" x2="162" y2="40" {...fold} />
+      <line x1="26" y1="14" x2="26" y2="66" {...fold} />
+      <line x1="8" y1="62" x2="162" y2="62" {...fold} />
+
+      {/* Rear wheel — center (30,68), bottom 88.8 < 90 ✓ */}
+      <WheelG cx={30} cy={68} />
+
+      {/* Front wheel — center (142,68), right edge 159.6 < 175 ✓ */}
+      <WheelG cx={142} cy={68} />
+    </svg>
+  );
+}
+
 export function PaperCart(props) {
   return (
-    <svg viewBox="0 0 140 90" {...props}>
+    <svg viewBox="0 0 140 102" {...props}>
       <polygon points="20,40 80,40 95,55 95,75 20,75" fill="currentColor" />
       <polygon points="20,40 80,40 70,58 20,58" style={shade} />
       <polygon points="80,40 110,20 95,55" fill="currentColor" opacity={0.9} />
       <polygon points="80,40 110,20 95,40" style={shade} />
       <line x1="20" y1="40" x2="80" y2="40" {...fold} />
       <line x1="80" y1="40" x2="95" y2="55" {...fold} />
-      <g transform="translate(30,55) scale(0.8)">
-        <HexWheel />
-      </g>
-      <g transform="translate(78,55) scale(0.8)">
-        <HexWheel />
-      </g>
+      {/* Rear wheel — center (54,79), bottom 99.8 < 102 ✓ */}
+      <WheelG cx={54} cy={79} />
+      {/* Front wheel — center (102,79), right edge 119.6 < 140 ✓ */}
+      <WheelG cx={102} cy={79} />
     </svg>
   );
 }

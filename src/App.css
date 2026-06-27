@@ -200,6 +200,45 @@ a.pill:hover {
     3px 6px 16px rgba(0,0,0,0.22);
 }
 
+/* Origami crumpled-paper texture on the orange button */
+.btn-primary::before {
+  background:
+    /* Bold diagonal crease: bright highlight edge + shadow edge */
+    linear-gradient(42deg,
+      transparent 38%,
+      rgba(255,255,255,0.34) 38.5%, rgba(255,255,255,0.28) 39.2%,
+      rgba(0,0,0,0.15) 39.8%,
+      transparent 41.5%),
+    /* Counter-diagonal crease */
+    linear-gradient(-50deg,
+      transparent 52%,
+      rgba(255,255,255,0.20) 52.6%,
+      rgba(0,0,0,0.13) 53.4%,
+      transparent 55%),
+    /* Top-left illuminated facet */
+    linear-gradient(148deg, rgba(255,255,255,0.22) 0%, transparent 48%),
+    /* Bottom-right shadow facet */
+    linear-gradient(328deg, rgba(0,0,0,0.20) 0%, transparent 42%),
+    /* Micro crinkle upper-right */
+    linear-gradient(78deg, transparent 70%, rgba(255,255,255,0.15) 70.6%, transparent 72%),
+    /* Micro crinkle lower-left */
+    linear-gradient(-22deg, transparent 20%, rgba(0,0,0,0.11) 21%, transparent 23%);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    /* Additional thin crease pair */
+    linear-gradient(16deg, transparent 55%, rgba(255,255,255,0.10) 55.6%, transparent 57%),
+    linear-gradient(-68deg, transparent 42%, rgba(0,0,0,0.09) 42.6%, transparent 44%),
+    /* Soft paper highlight near top */
+    radial-gradient(ellipse at 68% 18%, rgba(255,255,255,0.16) 0%, transparent 55%);
+  pointer-events: none;
+}
+
 .btn-ghost {
   background: transparent;
   color: var(--ink);
