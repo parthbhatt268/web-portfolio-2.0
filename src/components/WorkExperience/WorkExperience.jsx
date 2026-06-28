@@ -1,5 +1,5 @@
 import React from 'react';
-import sirenImage from '../../assets/images/SirenPhoto.jpg';
+import sirenImage from './siren.png';
 import jioImage from '../../assets/images/jio.jpg';
 import data from '../../data.json';
 import './WorkExperience.css';
@@ -83,7 +83,7 @@ export default function WorkExperience() {
 
             {/* ── Right: company image ── */}
             <img
-              className={`experience__photo${job.company === 'Siren' ? ' experience__photo--siren' : ''}`}
+              className="experience__photo"
               src={IMAGES[job.company]}
               alt={job.company}
               loading="lazy"

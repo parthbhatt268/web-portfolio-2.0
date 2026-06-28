@@ -199,10 +199,6 @@
   top: 100px;
 }
 
-.experience__photo--siren {
-  object-position: 65% center;
-}
-
 /* ── Responsive ── */
 @media (max-width: 760px) {
   .experience__card {
