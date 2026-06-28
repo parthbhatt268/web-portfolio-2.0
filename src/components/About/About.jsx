@@ -1,5 +1,5 @@
 import React from 'react';
-import headshot from '../../assets/images/Parth.jpeg';
+import headshot from '../Home/parth.jpeg';
 import data from '../../data.json';
 import './About.css';
 

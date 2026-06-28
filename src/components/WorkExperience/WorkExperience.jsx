@@ -83,7 +83,7 @@ export default function WorkExperience() {
 
             {/* ── Right: company image ── */}
             <img
-              className="experience__photo"
+              className={`experience__photo${job.company === 'Siren' ? ' experience__photo--siren' : ''}`}
               src={IMAGES[job.company]}
               alt={job.company}
               loading="lazy"
